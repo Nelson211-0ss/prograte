@@ -10,1957 +10,440 @@
 
     <title>Prograte Capital Ventures | Empowering Uganda's Women Entrepreneurs</title>
 
-    <style>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-        :root {
+    <script>
 
-            --primary: #0a5c97;
+        tailwind.config = {
 
-            --primary-light: #e8f4fc;
+            theme: {
 
-            --secondary: #e87722;
+                extend: {
 
-            --secondary-light: #fdf1e8;
+                    colors: {
 
-            --light: #f5f5f5;
+                        primary: '#0a5c97',
 
-            --dark: #333333;
+                        'primary-light': '#e8f4fc',
 
-            --white: #ffffff;
+                        secondary: '#e87722',
 
-            --success: #27ae60;
+                        'secondary-light': '#fdf1e8',
 
-            --info: #3498db;
+                    }
 
-            --warning: #f39c12;
-
-        }
-
-       
-
-        * {
-
-            margin: 0;
-
-            padding: 0;
-
-            box-sizing: border-box;
-
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-        }
-
-       
-
-        body {
-
-            background-color: var(--light);
-
-            color: var(--dark);
-
-            line-height: 1.6;
-
-        }
-
-       
-
-        header {
-
-            background-color: var(--primary);
-
-            color: var(--white);
-
-            padding: 1rem 2rem;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-
-            position: fixed;
-
-            width: 100%;
-
-            z-index: 1000;
-
-        }
-
-       
-
-        .logo {
-
-            font-size: 1.5rem;
-
-            font-weight: bold;
-
-            display: flex;
-
-            align-items: center;
-
-        }
-
-       
-
-        .logo-img {
-
-            width: 40px;
-
-            height: 40px;
-
-            margin-right: 10px;
-
-            background-color: var(--white);
-
-            border-radius: 50%;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            font-size: 24px;
-
-        }
-
-       
-
-        nav ul {
-
-            display: flex;
-
-            list-style: none;
-
-        }
-
-       
-
-        nav ul li {
-
-            margin-left: 1.5rem;
-
-        }
-
-       
-
-        nav ul li a {
-
-            color: var(--white);
-
-            text-decoration: none;
-
-            font-weight: 500;
-
-            padding: 0.5rem;
-
-            transition: all 0.3s ease;
-
-        }
-
-       
-
-        nav ul li a:hover {
-
-            color: var(--secondary);
-
-        }
-
-       
-
-        .active {
-
-            border-bottom: 3px solid var(--secondary);
-
-        }
-
-       
-
-        .hero {
-
-            background-image: linear-gradient(rgba(10, 92, 151, 0.7), rgba(10, 92, 151, 0.7)), url('/api/placeholder/1920/1080');
-
-            background-size: cover;
-
-            background-position: center;
-
-            color: var(--white);
-
-            text-align: center;
-
-            padding: 12rem 2rem 8rem;
-
-            position: relative;
-
-        }
-
-       
-
-        .hero-content {
-
-            max-width: 900px;
-
-            margin: 0 auto;
-
-        }
-
-       
-
-        .hero h1 {
-
-            font-size: 3rem;
-
-            margin-bottom: 1.5rem;
-
-            line-height: 1.2;
-
-        }
-
-       
-
-        .hero p {
-
-            font-size: 1.3rem;
-
-            margin-bottom: 2rem;
-
-        }
-
-       
-
-        .cta-btn {
-
-            display: inline-block;
-
-            background-color: var(--secondary);
-
-            color: var(--white);
-
-            padding: 1rem 2.5rem;
-
-            border-radius: 50px;
-
-            text-decoration: none;
-
-            font-weight: bold;
-
-            letter-spacing: 1px;
-
-            transition: all 0.3s ease;
-
-            margin: 0 10px 10px;
-
-        }
-
-       
-
-        .cta-btn:hover {
-
-            background-color: #d2661b;
-
-            transform: scale(1.05);
-
-        }
-
-       
-
-        .cta-btn.outline {
-
-            background-color: transparent;
-
-            border: 2px solid var(--white);
-
-        }
-
-       
-
-        .cta-btn.outline:hover {
-
-            background-color: var(--white);
-
-            color: var(--primary);
-
-        }
-
-       
-
-        .stats-banner {
-
-            background-color: var(--secondary);
-
-            color: var(--white);
-
-            padding: 2rem 1rem;
-
-            text-align: center;
-
-        }
-
-       
-
-        .stats-container {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            justify-content: center;
-
-            max-width: 1200px;
-
-            margin: 0 auto;
-
-        }
-
-       
-
-        .stat-item {
-
-            margin: 1rem 2rem;
-
-            min-width: 160px;
-
-        }
-
-       
-
-        .stat-number {
-
-            font-size: 2.5rem;
-
-            font-weight: bold;
-
-            margin-bottom: 0.5rem;
-
-        }
-
-       
-
-        .stat-label {
-
-            font-size: 1rem;
-
-        }
-
-       
-
-        .section {
-
-            padding: 5rem 2rem;
-
-        }
-
-       
-
-        .section-title {
-
-            text-align: center;
-
-            margin-bottom: 3rem;
-
-        }
-
-       
-
-        .section-title h2 {
-
-            font-size: 2.2rem;
-
-            color: var(--primary);
-
-            margin-bottom: 1rem;
-
-            position: relative;
-
-            display: inline-block;
-
-        }
-
-       
-
-        .section-title h2::after {
-
-            content: "";
-
-            position: absolute;
-
-            width: 50%;
-
-            height: 3px;
-
-            background-color: var(--secondary);
-
-            bottom: -10px;
-
-            left: 25%;
-
-        }
-
-       
-
-        .section-title p {
-
-            font-size: 1.1rem;
-
-            max-width: 800px;
-
-            margin: 0 auto;
-
-        }
-
-       
-
-        .problem-solution {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            justify-content: center;
-
-            max-width: 1200px;
-
-            margin: 0 auto;
-
-        }
-
-       
-
-        .problem, .solution {
-
-            flex: 1;
-
-            min-width: 300px;
-
-            padding: 2rem;
-
-        }
-
-       
-
-        .problem {
-
-            background-color: var(--primary-light);
-
-            border-radius: 8px 0 0 8px;
-
-        }
-
-       
-
-        .solution {
-
-            background-color: var(--secondary-light);
-
-            border-radius: 0 8px 8px 0;
-
-        }
-
-       
-
-        .card-title {
-
-            font-size: 1.5rem;
-
-            color: var(--primary);
-
-            margin-bottom: 1.5rem;
-
-            text-align: center;
-
-        }
-
-       
-
-        .card-icon {
-
-            font-size: 3rem;
-
-            text-align: center;
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .how-it-works {
-
-            max-width: 1200px;
-
-            margin: 0 auto;
-
-        }
-
-       
-
-        .steps-container {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            justify-content: center;
-
-        }
-
-       
-
-        .step {
-
-            flex: 1;
-
-            min-width: 250px;
-
-            margin: 1rem;
-
-            padding: 2rem;
-
-            background-color: var(--white);
-
-            border-radius: 8px;
-
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-
-            text-align: center;
-
-            transition: transform 0.3s ease;
-
-        }
-
-       
-
-        .step:hover {
-
-            transform: translateY(-10px);
-
-        }
-
-       
-
-        .step-number {
-
-            display: inline-block;
-
-            width: 40px;
-
-            height: 40px;
-
-            background-color: var(--primary);
-
-            color: var(--white);
-
-            border-radius: 50%;
-
-            line-height: 40px;
-
-            font-weight: bold;
-
-            margin-bottom: 1rem;
-
-        }
-
-       
-
-        .step-icon {
-
-            font-size: 2.5rem;
-
-            color: var(--secondary);
-
-            margin-bottom: 1rem;
-
-        }
-
-       
-
-        .step-title {
-
-            font-size: 1.3rem;
-
-            font-weight: bold;
-
-            color: var(--primary);
-
-            margin-bottom: 1rem;
-
-        }
-
-       
-
-        .spotlight {
-
-            background-color: var(--primary-light);
-
-            padding: 5rem 2rem;
-
-        }
-
-       
-
-        .spotlight-container {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            justify-content: center;
-
-            align-items: center;
-
-            max-width: 1200px;
-
-            margin: 0 auto;
-
-        }
-
-       
-
-        .spotlight-image {
-
-            flex: 1;
-
-            min-width: 300px;
-
-            padding: 2rem;
-
-        }
-
-       
-
-        .spotlight-image img {
-
-            width: 100%;
-
-            border-radius: 8px;
-
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-
-        }
-
-       
-
-        .spotlight-content {
-
-            flex: 1;
-
-            min-width: 300px;
-
-            padding: 2rem;
-
-        }
-
-       
-
-        .spotlight-title {
-
-            font-size: 1.8rem;
-
-            color: var(--primary);
-
-            margin-bottom: 1rem;
-
-        }
-
-       
-
-        .spotlight-business {
-
-            font-size: 1.2rem;
-
-            color: var(--secondary);
-
-            font-style: italic;
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .spotlight-metrics {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .spotlight-metric {
-
-            text-align: center;
-
-            flex: 1;
-
-        }
-
-       
-
-        .metric-value {
-
-            font-size: 1.5rem;
-
-            font-weight: bold;
-
-            color: var(--primary);
-
-        }
-
-       
-
-        .metric-label {
-
-            font-size: 0.9rem;
-
-        }
-
-       
-
-        .quote {
-
-            font-style: italic;
-
-            padding: 1.5rem;
-
-            background-color: var(--white);
-
-            border-radius: 8px;
-
-            position: relative;
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .quote::before {
-
-            content: """;
-
-            font-size: 4rem;
-
-            position: absolute;
-
-            top: -15px;
-
-            left: 10px;
-
-            color: rgba(10, 92, 151, 0.1);
-
-        }
-
-       
-
-        .approach {
-
-            max-width: 1200px;
-
-            margin: 0 auto;
-
-        }
-
-       
-
-        .approach-container {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            justify-content: center;
-
-        }
-
-       
-
-        .approach-item {
-
-            flex: 1;
-
-            min-width: 300px;
-
-            margin: 1rem;
-
-            padding: 2rem;
-
-            background-color: var(--white);
-
-            border-radius: 8px;
-
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-
-        }
-
-       
-
-        .approach-icon {
-
-            font-size: 2.5rem;
-
-            color: var(--secondary);
-
-            margin-bottom: 1rem;
-
-            text-align: center;
-
-        }
-
-       
-
-        .approach-title {
-
-            font-size: 1.3rem;
-
-            font-weight: bold;
-
-            color: var(--primary);
-
-            margin-bottom: 1rem;
-
-            text-align: center;
-
-        }
-
-       
-
-        .map-section {
-
-            background-color: var(--primary-light);
-
-            padding: 5rem 2rem;
-
-        }
-
-       
-
-        .map-container {
-
-            max-width: 1200px;
-
-            margin: 0 auto;
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            justify-content: center;
-
-            align-items: center;
-
-        }
-
-       
-
-        .map {
-
-            flex: 1;
-
-            min-width: 300px;
-
-            padding: 2rem;
-
-            text-align: center;
-
-        }
-
-       
-
-        .map-image {
-
-            width: 100%;
-
-            max-width: 500px;
-
-            margin: 0 auto;
-
-            position: relative;
-
-        }
-
-       
-
-        .map-point {
-
-            position: absolute;
-
-            width: 20px;
-
-            height: 20px;
-
-            background-color: var(--secondary);
-
-            border-radius: 50%;
-
-            cursor: pointer;
-
-        }
-
-       
-
-        .map-point:hover {
-
-            transform: scale(1.2);
-
-        }
-
-       
-
-        .map-point.jinja {
-
-            top: 40%;
-
-            right: 30%;
-
-        }
-
-       
-
-        .map-point.matugga {
-
-            top: 55%;
-
-            left: 45%;
-
-        }
-
-       
-
-        .map-point.busia {
-
-            top: 30%;
-
-            left: 20%;
-
-        }
-
-       
-
-        .location-details {
-
-            flex: 1;
-
-            min-width: 300px;
-
-            padding: 2rem;
-
-        }
-
-       
-
-        .location-tabs {
-
-            display: flex;
-
-            justify-content: center;
-
-            margin-bottom: 2rem;
-
-            border-bottom: 1px solid #ddd;
-
-        }
-
-       
-
-        .location-tab {
-
-            padding: 1rem 2rem;
-
-            cursor: pointer;
-
-            margin: 0 0.5rem;
-
-            border-bottom: 3px solid transparent;
-
-        }
-
-       
-
-        .location-tab.active {
-
-            border-bottom: 3px solid var(--secondary);
-
-            color: var(--primary);
-
-            font-weight: bold;
-
-        }
-
-       
-
-        .location-content {
-
-            display: none;
-
-            animation: fadeIn 0.5s;
-
-        }
-
-       
-
-        .location-content.active {
-
-            display: block;
-
-        }
-
-       
-
-        @keyframes fadeIn {
-
-            from { opacity: 0; }
-
-            to { opacity: 1; }
-
-        }
-
-       
-
-        .location-title {
-
-            font-size: 1.5rem;
-
-            color: var(--primary);
-
-            margin-bottom: 1rem;
-
-        }
-
-       
-
-        .location-stats {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            flex-wrap: wrap;
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .location-stat {
-
-            flex: 1;
-
-            min-width: 100px;
-
-            text-align: center;
-
-            margin: 0.5rem;
-
-        }
-
-       
-
-        .location-stat-value {
-
-            font-size: 1.5rem;
-
-            font-weight: bold;
-
-            color: var(--primary);
-
-        }
-
-       
-
-        .location-stat-label {
-
-            font-size: 0.9rem;
-
-        }
-
-       
-
-        .team-section {
-
-            max-width: 1200px;
-
-            margin: 0 auto;
-
-        }
-
-       
-
-        .team-container {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            justify-content: center;
-
-        }
-
-       
-
-        .team-member {
-
-            width: 270px;
-
-            margin: 1.5rem;
-
-            background-color: var(--white);
-
-            border-radius: 8px;
-
-            overflow: hidden;
-
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-
-            transition: transform 0.3s ease;
-
-        }
-
-       
-
-        .team-member:hover {
-
-            transform: translateY(-10px);
-
-        }
-
-       
-
-        .member-image {
-
-            width: 100%;
-
-            height: 250px;
-
-            background-color: #ddd;
-
-            background-size: cover;
-
-            background-position: center;
-
-        }
-
-       
-
-        .member-info {
-
-            padding: 1.5rem;
-
-        }
-
-       
-
-        .member-name {
-
-            font-size: 1.3rem;
-
-            font-weight: bold;
-
-            color: var(--primary);
-
-            margin-bottom: 0.5rem;
-
-        }
-
-       
-
-        .member-title {
-
-            font-size: 1rem;
-
-            color: var(--secondary);
-
-            margin-bottom: 1rem;
-
-        }
-
-       
-
-        .news-section {
-
-            background-color: var(--primary-light);
-
-            padding: 5rem 2rem;
-
-        }
-
-       
-
-        .news-container {
-
-            max-width: 1200px;
-
-            margin: 0 auto;
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            justify-content: center;
-
-        }
-
-       
-
-        .news-item {
-
-            width: 350px;
-
-            margin: 1.5rem;
-
-            background-color: var(--white);
-
-            border-radius: 8px;
-
-            overflow: hidden;
-
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-
-            transition: transform 0.3s ease;
-
-        }
-
-       
-
-        .news-item:hover {
-
-            transform: translateY(-10px);
-
-        }
-
-       
-
-        .news-image {
-
-            width: 100%;
-
-            height: 200px;
-
-            background-color: #ddd;
-
-            background-size: cover;
-
-            background-position: center;
-
-        }
-
-       
-
-        .news-content {
-
-            padding: 1.5rem;
-
-        }
-
-       
-
-        .news-date {
-
-            font-size: 0.9rem;
-
-            color: var(--secondary);
-
-            margin-bottom: 0.5rem;
-
-        }
-
-       
-
-        .news-title {
-
-            font-size: 1.3rem;
-
-            font-weight: bold;
-
-            color: var(--primary);
-
-            margin-bottom: 1rem;
-
-        }
-
-       
-
-        .news-excerpt {
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .cta-section {
-
-            background-color: var(--primary);
-
-            color: var(--white);
-
-            text-align: center;
-
-            padding: 5rem 2rem;
-
-        }
-
-       
-
-        .cta-section h2 {
-
-            font-size: 2.5rem;
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .cta-section p {
-
-            font-size: 1.2rem;
-
-            max-width: 800px;
-
-            margin: 0 auto 2rem;
-
-        }
-
-       
-
-        .cta-buttons {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            justify-content: center;
-
-        }
-
-       
-
-        footer {
-
-            background-color: var(--dark);
-
-            color: var(--white);
-
-            padding: 3rem 2rem;
-
-        }
-
-       
-
-        .footer-container {
-
-            max-width: 1200px;
-
-            margin: 0 auto;
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            justify-content: space-between;
-
-        }
-
-       
-
-        .footer-section {
-
-            flex: 1;
-
-            min-width: 250px;
-
-            margin-bottom: 2rem;
-
-        }
-
-       
-
-        .footer-title {
-
-            font-size: 1.3rem;
-
-            margin-bottom: 1.5rem;
-
-            position: relative;
-
-            padding-bottom: 0.5rem;
-
-        }
-
-       
-
-        .footer-title::after {
-
-            content: "";
-
-            position: absolute;
-
-            width: 50px;
-
-            height: 2px;
-
-            background-color: var(--secondary);
-
-            bottom: 0;
-
-            left: 0;
-
-        }
-
-       
-
-        .footer-links a {
-
-            display: block;
-
-            color: var(--white);
-
-            text-decoration: none;
-
-            margin-bottom: 0.5rem;
-
-            transition: all 0.3s ease;
-
-        }
-
-       
-
-        .footer-links a:hover {
-
-            color: var(--secondary);
-
-            padding-left: 5px;
-
-        }
-
-       
-
-        .contact-info p {
-
-            margin-bottom: 0.5rem;
-
-        }
-
-       
-
-        .social-icons {
-
-            margin-top: 1rem;
-
-        }
-
-       
-
-        .social-icons a {
-
-            display: inline-block;
-
-            width: 40px;
-
-            height: 40px;
-
-            background-color: rgba(255, 255, 255, 0.1);
-
-            color: var(--white);
-
-            text-align: center;
-
-            line-height: 40px;
-
-            border-radius: 50%;
-
-            margin-right: 0.5rem;
-
-            transition: all 0.3s ease;
-
-        }
-
-       
-
-        .social-icons a:hover {
-
-            background-color: var(--secondary);
-
-            transform: translateY(-5px);
-
-        }
-
-       
-
-        .copyright {
-
-            text-align: center;
-
-            padding-top: 2rem;
-
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-
-            margin-top: 2rem;
-
-        }
-
-       
-
-        @media screen and (max-width: 768px) {
-
-            header {
-
-                flex-direction: column;
-
-                padding: 1rem;
-
-            }
-
-           
-
-            nav ul {
-
-                margin-top: 1rem;
-
-                flex-wrap: wrap;
-
-                justify-content: center;
-
-            }
-
-           
-
-            nav ul li {
-
-                margin: 0.5rem;
-
-            }
-
-           
-
-            .hero {
-
-                padding: 8rem 1rem 4rem;
-
-            }
-
-           
-
-            .hero h1 {
-
-                font-size: 2rem;
-
-            }
-
-           
-
-            .hero p {
-
-                font-size: 1.1rem;
-
-            }
-
-           
-
-            .problem, .solution {
-
-                border-radius: 8px;
-
-                margin-bottom: 1rem;
-
-            }
-
-           
-
-            .spotlight-image, .spotlight-content {
-
-                padding: 1rem;
-
-            }
-
-           
-
-            .location-tab {
-
-                padding: 0.5rem 1rem;
+                }
 
             }
 
         }
 
-    </style>
+    </script>
 
 </head>
 
-<body>
+<body class="bg-gray-100 text-gray-800 leading-relaxed">
 
-    <header>
+    <!-- Include header -->
 
-        <div class="logo">
+    <div id="header-placeholder"></div>
 
-            <div class="logo-img">↗</div>
+    <!-- Main content -->
 
-            <span>Prograte Capital Ventures</span>
+    <main class="pt-24">
 
-        </div>
+        <section class="bg-primary bg-opacity-70 text-white text-center py-48 px-8 relative bg-cover bg-center" style="background-image: linear-gradient(rgba(10, 92, 151, 0.7), rgba(10, 92, 151, 0.7)), url('/api/placeholder/1920/1080')">
 
-        <nav>
+            <div class="max-w-4xl mx-auto">
 
-            <ul>
+                <h1 class="text-5xl font-bold mb-6 leading-tight">Empowering Uganda's Women Entrepreneurs Through Innovative Micro-Investments</h1>
 
-                <li><a href="#" class="active">Home</a></li>
+                <p class="text-xl mb-8">We provide dividend-based micro-investments and comprehensive business support to women entrepreneurs in Uganda's informal sector, achieving consistent monthly returns while driving financial inclusion.</p>
 
-                <li><a href="#">About</a></li>
+                <div class="space-x-4">
 
-                <li><a href="#">Services</a></li>
+                    <a href="#" class="inline-block bg-secondary text-white px-10 py-4 rounded-full font-bold tracking-wide hover:bg-opacity-90 transform hover:scale-105 transition-all">Apply for Investment</a>
 
-                <li><a href="#">Impact</a></li>
+                    <a href="#" class="inline-block border-2 border-white text-white px-10 py-4 rounded-full font-bold tracking-wide hover:bg-white hover:text-primary transition-all">Learn More</a>
 
-                <li><a href="#">Apply</a></li>
-
-                <li><a href="#">Contact</a></li>
-
-            </ul>
-
-        </nav>
-
-    </header>
-
-   
-
-    <section class="hero">
-
-        <div class="hero-content">
-
-            <h1>Empowering Uganda's Women Entrepreneurs Through Innovative Micro-Investments</h1>
-
-            <p>We provide dividend-based micro-investments and comprehensive business support to women entrepreneurs in Uganda's informal sector, achieving consistent monthly returns while driving financial inclusion.</p>
-
-            <div>
-
-                <a href="#" class="cta-btn">Apply for Investment</a>
-
-                <a href="#" class="cta-btn outline">Learn More</a>
+                </div>
 
             </div>
 
-        </div>
-
-    </section>
-
-   
-
-    <section class="stats-banner">
-
-        <div class="stats-container">
-
-            <div class="stat-item">
-
-                <div class="stat-number">400+</div>
-
-                <div class="stat-label">Businesses Supported</div>
-
-            </div>
-
-            <div class="stat-item">
-
-                <div class="stat-number">81%</div>
-
-                <div class="stat-label">Women-Owned Enterprises</div>
-
-            </div>
-
-            <div class="stat-item">
-
-                <div class="stat-number">5-10%</div>
-
-                <div class="stat-label">Monthly Returns</div>
-
-            </div>
-
-            <div class="stat-item">
-
-                <div class="stat-number">$68K</div>
-
-                <div class="stat-label">Capital Deployed</div>
-
-            </div>
-
-            <div class="stat-item">
-
-                <div class="stat-number">74%</div>
-
-                <div class="stat-label">Active Engagement Rate</div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-   
-
-    <section class="section">
-
-        <div class="section-title">
-
-            <h2>The Challenge & Our Solution</h2>
-
-            <p>In Uganda, over 80% of women-owned businesses operate in the informal sector, systematically excluded from traditional financing despite their proven business success.</p>
-
-        </div>
+        </section>
 
        
 
-        <div class="problem-solution">
+        <section class="bg-secondary text-white py-16 px-8 text-center">
 
-            <div class="problem">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
 
-                <div class="card-icon">🔒</div>
+                <div class="text-center">
 
-                <div class="card-title">The Challenge</div>
+                    <div class="text-4xl font-bold mb-2">400+</div>
 
-                <p>Women entrepreneurs in Uganda's informal sector face significant barriers to accessing capital:</p>
+                    <div class="text-lg">Businesses Supported</div>
 
-                <ul style="margin-left: 20px; margin-top: 10px;">
+                </div>
 
-                    <li>Traditional financial institutions require collateral and formal documentation</li>
+                <div class="text-center">
 
-                    <li>Limited property ownership rights make collateral-based lending impossible</li>
+                    <div class="text-4xl font-bold mb-2">81%</div>
 
-                    <li>Cultural biases restrict access to male-dominated financial networks</li>
+                    <div class="text-lg">Women-Owned Enterprises</div>
 
-                    <li>Lack of formal business registration prevents access to conventional investments</li>
+                </div>
 
-                    <li>Existing microfinance solutions impose unsustainable interest rates and rigid repayment terms</li>
+                <div class="text-center">
 
-                </ul>
+                    <div class="text-4xl font-bold mb-2">5-10%</div>
+
+                    <div class="text-lg">Monthly Returns</div>
+
+                </div>
+
+                <div class="text-center">
+
+                    <div class="text-4xl font-bold mb-2">$68K</div>
+
+                    <div class="text-lg">Capital Deployed</div>
+
+                </div>
+
+                <div class="text-center">
+
+                    <div class="text-4xl font-bold mb-2">74%</div>
+
+                    <div class="text-lg">Active Engagement Rate</div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+       
+
+        <section class="py-20 px-8">
+
+            <div class="text-center mb-12">
+
+                <h2 class="text-4xl font-bold text-primary mb-4">The Challenge & Our Solution</h2>
+
+                <p class="text-xl max-w-2xl mx-auto">In Uganda, over 80% of women-owned businesses operate in the informal sector, systematically excluded from traditional financing despite their proven business success.</p>
 
             </div>
 
            
 
-            <div class="solution">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
 
-                <div class="card-icon">💡</div>
+                <div class="bg-primary-light p-8 rounded-lg shadow-lg">
 
-                <div class="card-title">Our Solution</div>
+                    <div class="text-3xl text-primary mb-6 text-center">🔒</div>
 
-                <p>Prograte Capital Ventures bridges this gap through our innovative approach:</p>
+                    <div class="text-2xl font-bold text-primary mb-6 text-center">The Challenge</div>
 
-                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <p class="mb-4">Women entrepreneurs in Uganda's informal sector face significant barriers to accessing capital:</p>
 
-                    <li>Dividend-based micro-investments ranging from $15 to $500</li>
+                    <ul class="space-y-2 list-disc pl-6">
 
-                    <li>No collateral requirements or formal documentation needed</li>
+                        <li>Traditional financial institutions require collateral and formal documentation</li>
 
-                    <li>Flexible payment schedules aligned with business cash flows</li>
+                        <li>Limited property ownership rights make collateral-based lending impossible</li>
 
-                    <li>Comprehensive business support services including mentorship and training</li>
+                        <li>Cultural biases restrict access to male-dominated financial networks</li>
 
-                    <li>Evaluation based on cash flow patterns, community reputation, and character</li>
+                        <li>Lack of formal business registration prevents access to conventional investments</li>
 
-                </ul>
+                        <li>Existing microfinance solutions impose unsustainable interest rates and rigid repayment terms</li>
 
-            </div>
-
-        </div>
-
-    </section>
-
-   
-
-    <section class="section">
-
-        <div class="section-title">
-
-            <h2>How It Works</h2>
-
-            <p>Our proven four-step process empowers entrepreneurs while delivering consistent returns</p>
-
-        </div>
-
-       
-
-        <div class="how-it-works">
-
-            <div class="steps-container">
-
-                <div class="step">
-
-                    <div class="step-number">1</div>
-
-                    <div class="step-icon">💰</div>
-
-                    <div class="step-title">Investment</div>
-
-                    <p>We provide flexible micro-investments from $15-$500 to women entrepreneurs with demonstrated business success and growth potential.</p>
+                    </ul>
 
                 </div>
 
                
 
-                <div class="step">
+                <div class="bg-secondary-light p-8 rounded-lg shadow-lg">
 
-                    <div class="step-number">2</div>
+                    <div class="text-3xl text-primary mb-6 text-center">💡</div>
 
-                    <div class="step-icon">🚀</div>
+                    <div class="text-2xl font-bold text-primary mb-6 text-center">Our Solution</div>
 
-                    <div class="step-title">Support</div>
+                    <p class="mb-4">Prograte Capital Ventures bridges this gap through our innovative approach:</p>
 
-                    <p>Our comprehensive business development mentorship, financial literacy training, and networking opportunities set entrepreneurs up for success.</p>
+                    <ul class="space-y-2 list-disc pl-6">
 
-                </div>
+                        <li>Dividend-based micro-investments ranging from $15 to $500</li>
 
-               
+                        <li>No collateral requirements or formal documentation needed</li>
 
-                <div class="step">
+                        <li>Flexible payment schedules aligned with business cash flows</li>
 
-                    <div class="step-number">3</div>
+                        <li>Comprehensive business support services including mentorship and training</li>
 
-                    <div class="step-icon">📈</div>
+                        <li>Evaluation based on cash flow patterns, community reputation, and character</li>
 
-                    <div class="step-title">Growth</div>
-
-                    <p>Entrepreneurs leverage our capital and support to expand inventory, improve operations, and create jobs within their communities.</p>
-
-                </div>
-
-               
-
-                <div class="step">
-
-                    <div class="step-number">4</div>
-
-                    <div class="step-icon">🏆</div>
-
-                    <div class="step-title">Returns</div>
-
-                    <p>Monthly dividend payments of 5-10% create sustainable returns while entrepreneurs build toward financial independence.</p>
+                    </ul>
 
                 </div>
 
             </div>
 
-        </div>
-
-    </section>
-
-   
-
-    <section class="spotlight">
-
-        <div class="section-title">
-
-            <h2>Entrepreneur Spotlight</h2>
-
-            <p>Meet the remarkable entrepreneurs transforming their businesses with Prograte's support</p>
-
-        </div>
+        </section>
 
        
 
-        <div class="spotlight-container">
+        <section class="py-20 px-8 bg-white">
 
-            <div class="spotlight-image">
+            <div class="text-center mb-12">
 
-                <img src="/api/placeholder/500/500" alt="Janet Nakato, Market Vendor">
+                <h2 class="text-4xl font-bold text-primary mb-4">How It Works</h2>
+
+                <p class="text-xl max-w-2xl mx-auto">Our proven four-step process empowers entrepreneurs while delivering consistent returns</p>
 
             </div>
 
            
 
-            <div class="spotlight-content">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-                <div class="spotlight-title">Janet Nakato</div>
+                <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all transform hover:-translate-y-1">
 
-                <div class="spotlight-business">Fresh Produce Market, Jinja</div>
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mb-6 mx-auto">1</div>
 
-               
+                    <div class="text-3xl text-secondary mb-4 text-center">💰</div>
 
-                <p>Janet operated a small produce stand selling just three vegetable varieties and struggling to maintain consistent inventory. After receiving a $200 investment from Prograte, she expanded her inventory, purchased a refrigerator to reduce spoilage, and now operates one of the most successful produce businesses in her market.</p>
+                    <div class="text-xl font-bold text-primary mb-4 text-center">Investment</div>
 
-               
-
-                <div class="spotlight-metrics">
-
-                    <div class="spotlight-metric">
-
-                        <div class="metric-value">250%</div>
-
-                        <div class="metric-label">Revenue Growth</div>
-
-                    </div>
-
-                    <div class="spotlight-metric">
-
-                        <div class="metric-value">3</div>
-
-                        <div class="metric-label">Jobs Created</div>
-
-                    </div>
-
-                    <div class="spotlight-metric">
-
-                        <div class="metric-value">15</div>
-
-                        <div class="metric-label">Product Varieties</div>
-
-                    </div>
+                    <p class="text-gray-600 text-center">We provide flexible micro-investments from $15-$500 to women entrepreneurs with demonstrated business success and growth potential.</p>
 
                 </div>
 
                
 
-                <div class="quote">
+                <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all transform hover:-translate-y-1">
 
-                    "Before Prograte, I lost so much inventory to spoilage, and banks wouldn't help me because I had no collateral. Now I have a refrigerator, a wider variety of products, and I've hired three people from my community. My children are in better schools, and I'm saving to open a second location."
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mb-6 mx-auto">2</div>
+
+                    <div class="text-3xl text-secondary mb-4 text-center">🚀</div>
+
+                    <div class="text-xl font-bold text-primary mb-4 text-center">Support</div>
+
+                    <p class="text-gray-600 text-center">Our comprehensive business development mentorship, financial literacy training, and networking opportunities set entrepreneurs up for success.</p>
 
                 </div>
 
                
 
-                <a href="#" class="btn">Read Janet's Full Story</a>
+                <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all transform hover:-translate-y-1">
+
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mb-6 mx-auto">3</div>
+
+                    <div class="text-3xl text-secondary mb-4 text-center">📈</div>
+
+                    <div class="text-xl font-bold text-primary mb-4 text-center">Growth</div>
+
+                    <p class="text-gray-600 text-center">Entrepreneurs leverage our capital and support to expand inventory, improve operations, and create jobs within their communities.</p>
+
+                </div>
+
+               
+
+                <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all transform hover:-translate-y-1">
+
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mb-6 mx-auto">4</div>
+
+                    <div class="text-3xl text-secondary mb-4 text-center">🏆</div>
+
+                    <div class="text-xl font-bold text-primary mb-4 text-center">Returns</div>
+
+                    <p class="text-gray-600 text-center">Monthly dividend payments of 5-10% create sustainable returns while entrepreneurs build toward financial independence.</p>
+
+                </div>
 
             </div>
 
-        </div>
-
-    </section>
-
-   
-
-    <section class="section">
-
-        <div class="section-title">
-
-            <h2>Our Investment Approach</h2>
-
-            <p>A revolutionary model tailored for Uganda's informal sector</p>
-
-        </div>
+        </section>
 
        
 
-        <div class="approach">
+        <section class="bg-primary-light py-20 px-8">
 
-            <div class="approach-container">
+            <div class="text-center mb-12">
 
-                <div class="approach-item">
+                <h2 class="text-4xl font-bold text-primary mb-4">Entrepreneur Spotlight</h2>
 
-                    <div class="approach-icon">💵</div>
+                <p class="text-xl max-w-2xl mx-auto">Meet the remarkable entrepreneurs transforming their businesses with Prograte's support</p>
 
-                    <div class="approach-title">Dividend-Based Model</div>
+            </div>
 
-                    <p>Unlike traditional loans with rigid repayment schedules, our dividend-based model aligns payments with business cash flows. Entrepreneurs make monthly dividend payments of 5-10% of invested capital, creating sustainable returns while accommodating the natural cycles of their businesses.</p>
+           
+
+            <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+
+                <div class="w-full">
+
+                    <img src="/api/placeholder/500/500" alt="Janet Nakato, Market Vendor" class="w-full rounded-lg shadow-lg">
 
                 </div>
-                <div class="approach-item">
 
-                    <div class="approach-icon">🤝</div>
+               
 
-                    <div class="approach-title">No Collateral Required</div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
 
-                    <p>We've eliminated the collateral barrier that prevents women entrepreneurs from accessing traditional financing. Instead, we evaluate businesses through cash flow patterns, community reputation, and character assessments, creating opportunities for entrepreneurs who have been systemat
+                    <h3 class="text-2xl font-bold text-primary mb-2">Janet Nakato</h3>
+
+                    <div class="text-xl text-secondary italic mb-6">Fresh Produce Market, Jinja</div>
+
+                    <p class="mb-6 text-gray-600">Janet operated a small produce stand selling just three vegetable varieties and struggling to maintain consistent inventory. After receiving a $200 investment from Prograte, she expanded her inventory, purchased a refrigerator to reduce spoilage, and now operates one of the most successful produce businesses in her market.</p>
+
+                    <div class="grid grid-cols-3 gap-4 mb-6">
+
+                        <div class="text-center p-4 bg-primary-light rounded-lg">
+
+                            <div class="text-2xl font-bold text-primary">250%</div>
+
+                            <div class="text-sm text-gray-600">Revenue Growth</div>
+
+                        </div>
+
+                        <div class="text-center p-4 bg-primary-light rounded-lg">
+
+                            <div class="text-2xl font-bold text-primary">3</div>
+
+                            <div class="text-sm text-gray-600">Jobs Created</div>
+
+                        </div>
+
+                        <div class="text-center p-4 bg-primary-light rounded-lg">
+
+                            <div class="text-2xl font-bold text-primary">15</div>
+
+                            <div class="text-sm text-gray-600">Product Varieties</div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="italic p-6 bg-primary-light rounded-lg relative mb-6">
+
+                        <div class="absolute top-[-15px] left-2 text-4xl text-primary opacity-10">"</div>
+
+                        <p class="text-gray-700">"Before Prograte, I lost so much inventory to spoilage, and banks wouldn't help me because I had no collateral. Now I have a refrigerator, a wider variety of products, and I've hired three people from my community. My children are in better schools, and I'm saving to open a second location."</p>
+
+                    </div>
+
+                    <a href="#" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-bold tracking-wide hover:bg-opacity-90 transform hover:scale-105 transition-all">Read Janet's Full Story</a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+       
+
+        <section class="py-20 px-8">
+
+            <div class="text-center mb-12">
+
+                <h2 class="text-4xl font-bold text-primary mb-4">Our Investment Approach</h2>
+
+                <p class="text-xl max-w-2xl mx-auto">A revolutionary model tailored for Uganda's informal sector</p>
+
+            </div>
+
+           
+
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all">
+
+                    <div class="text-3xl text-secondary mb-4 text-center">💵</div>
+
+                    <h3 class="text-2xl font-bold text-primary mb-4 text-center">Dividend-Based Model</h3>
+
+                    <p class="text-gray-600">Unlike traditional loans with rigid repayment schedules, our dividend-based model aligns payments with business cash flows. Entrepreneurs make monthly dividend payments of 5-10% of invested capital, creating sustainable returns while accommodating the natural cycles of their businesses.</p>
+
+                </div>
+
+               
+
+                <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all">
+
+                    <div class="text-3xl text-secondary mb-4 text-center">🤝</div>
+
+                    <h3 class="text-2xl font-bold text-primary mb-4 text-center">No Collateral Required</h3>
+
+                    <p class="text-gray-600">We've eliminated the collateral barrier that prevents women entrepreneurs from accessing traditional financing. Instead, we evaluate businesses through cash flow patterns, community reputation, and character assessments, creating opportunities for entrepreneurs who have been systematically excluded from the financial system.</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+       
+
+        <section class="bg-primary text-white text-center py-20 px-8">
+
+            <div class="max-w-4xl mx-auto">
+
+                <h2 class="text-4xl font-bold mb-6">Ready to Get Started?</h2>
+
+                <p class="text-xl mb-8">Join us in empowering Uganda's women entrepreneurs</p>
+
+                <div class="flex flex-wrap justify-center gap-4">
+
+                    <a href="#" class="inline-block bg-secondary text-white px-10 py-4 rounded-full font-bold tracking-wide hover:bg-opacity-90 transform hover:scale-105 transition-all">Apply for Investment</a>
+
+                    <a href="#" class="inline-block border-2 border-white text-white px-10 py-4 rounded-full font-bold tracking-wide hover:bg-white hover:text-primary transition-all">Learn More</a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Include footer -->
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Component Loading Script -->
+
+    <script>
+
+        // Load header
+
+        fetch('header.html')
+
+            .then(response => response.text())
+
+            .then(data => {
+
+                document.getElementById('header-placeholder').innerHTML = data;
+
+            });
+
+        
+
+        // Load footer
+
+        fetch('footer.html')
+
+            .then(response => response.text())
+
+            .then(data => {
+
+                document.getElementById('footer-placeholder').innerHTML = data;
+
+            });
+
+    </script>
+
+</body>
+
+</html>

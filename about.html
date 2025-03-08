@@ -1,1633 +1,346 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>About Us | Prograte Capital Ventures</title>
-
-    <style>
-
-        :root {
-
-            --primary: #0a5c97;
-
-            --primary-light: #e8f4fc;
-
-            --secondary: #e87722;
-
-            --secondary-light: #fdf1e8;
-
-            --light: #f5f5f5;
-
-            --dark: #333333;
-
-            --white: #ffffff;
-
-            --success: #27ae60;
-
-        }
-
-       
-
-        * {
-
-            margin: 0;
-
-            padding: 0;
-
-            box-sizing: border-box;
-
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-        }
-
-       
-
-        body {
-
-            background-color: var(--light);
-
-            color: var(--dark);
-
-            line-height: 1.6;
-
-        }
-
-       
-
-        header {
-
-            background-color: var(--primary);
-
-            color: var(--white);
-
-            padding: 1rem 2rem;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-
-        }
-
-       
-
-        .logo {
-
-            font-size: 1.5rem;
-
-            font-weight: bold;
-
-            display: flex;
-
-            align-items: center;
-
-        }
-
-       
-
-        .logo-img {
-
-            width: 40px;
-
-            height: 40px;
-
-            margin-right: 10px;
-
-            background-color: var(--white);
-
-            border-radius: 50%;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            font-size: 24px;
-
-        }
-
-       
-
-        nav ul {
-
-            display: flex;
-
-            list-style: none;
-
-        }
-
-       
-
-        nav ul li {
-
-            margin-left: 1.5rem;
-
-        }
-
-       
-
-        nav ul li a {
-
-            color: var(--white);
-
-            text-decoration: none;
-
-            font-weight: 500;
-
-            padding: 0.5rem;
-
-            transition: all 0.3s ease;
-
-        }
-
-       
-
-        nav ul li a:hover {
-
-            color: var(--secondary);
-
-        }
-
-       
-
-        .active {
-
-            border-bottom: 3px solid var(--secondary);
-
-        }
-
-       
-
-        .hero {
-
-            background-image: linear-gradient(rgba(10, 92, 151, 0.8), rgba(10, 92, 151, 0.8)), url('/api/placeholder/1200/400');
-
-            background-size: cover;
-
-            background-position: center;
-
-            color: var(--white);
-
-            text-align: center;
-
-            padding: 4rem 2rem;
-
-        }
-
-       
-
-        .hero h1 {
-
-            font-size: 2.5rem;
-
-            margin-bottom: 1rem;
-
-        }
-
-       
-
-        .hero p {
-
-            font-size: 1.2rem;
-
-            max-width: 800px;
-
-            margin: 0 auto;
-
-        }
-
-       
-
-        .container {
-
-            max-width: 1200px;
-
-            margin: 0 auto;
-
-            padding: 4rem 2rem;
-
-        }
-
-       
-
-        .section-title {
-
-            text-align: center;
-
-            margin-bottom: 3rem;
-
-        }
-
-       
-
-        .section-title h2 {
-
-            font-size: 2.2rem;
-
-            color: var(--primary);
-
-            margin-bottom: 1rem;
-
-            position: relative;
-
-            display: inline-block;
-
-        }
-
-       
-
-        .section-title h2::after {
-
-            content: "";
-
-            position: absolute;
-
-            width: 50%;
-
-            height: 3px;
-
-            background-color: var(--secondary);
-
-            bottom: -10px;
-
-            left: 25%;
-
-        }
-
-       
-
-        .section-title p {
-
-            font-size: 1.1rem;
-
-            max-width: 800px;
-
-            margin: 0 auto;
-
-        }
-
-       
-
-        .mission-vision {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            justify-content: center;
-
-            gap: 2rem;
-
-            margin-bottom: 4rem;
-
-        }
-
-       
-
-        .mission, .vision {
-
-            flex: 1;
-
-            min-width: 300px;
-
-            padding: 2rem;
-
-            background-color: var(--white);
-
-            border-radius: 8px;
-
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-
-            position: relative;
-
-            overflow: hidden;
-
-        }
-
-       
-
-        .mission::before, .vision::before {
-
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-
-            left: 0;
-
-            width: 100%;
-
-            height: 5px;
-
-        }
-
-       
-
-        .mission::before {
-
-            background-color: var(--primary);
-
-        }
-
-       
-
-        .vision::before {
-
-            background-color: var(--secondary);
-
-        }
-
-       
-
-        .card-title {
-
-            font-size: 1.5rem;
-
-            font-weight: bold;
-
-            color: var(--primary);
-
-            margin-bottom: 1.5rem;
-
-            text-align: center;
-
-        }
-
-       
-
-        .card-icon {
-
-            font-size: 3rem;
-
-            text-align: center;
-
-            margin-bottom: 1.5rem;
-
-            color: var(--secondary);
-
-        }
-
-       
-
-        .story-section {
-
-            background-color: var(--primary-light);
-
-            padding: 4rem 2rem;
-
-            margin-bottom: 4rem;
-
-            border-radius: 8px;
-
-        }
-
-       
-
-        .timeline {
-
-            position: relative;
-
-            max-width: 1000px;
-
-            margin: 0 auto;
-
-        }
-
-       
-
-        .timeline::after {
-
-            content: '';
-
-            position: absolute;
-
-            width: 6px;
-
-            background-color: var(--primary);
-
-            top: 0;
-
-            bottom: 0;
-
-            left: 50%;
-
-            margin-left: -3px;
-
-        }
-
-       
-
-        .timeline-item {
-
-            padding: 10px 40px;
-
-            position: relative;
-
-            width: 50%;
-
-            box-sizing: border-box;
-
-        }
-
-       
-
-        .left {
-
-            left: 0;
-
-        }
-
-       
-
-        .right {
-
-            left: 50%;
-
-        }
-
-       
-
-        .timeline-content {
-
-            padding: 20px;
-
-            background-color: var(--white);
-
-            border-radius: 8px;
-
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-
-        }
-
-       
-
-        .timeline-date {
-
-            font-weight: bold;
-
-            color: var(--secondary);
-
-            margin-bottom: 0.5rem;
-
-        }
-
-       
-
-        .timeline-title {
-
-            font-size: 1.2rem;
-
-            color: var(--primary);
-
-            margin-bottom: 1rem;
-
-        }
-
-       
-
-        .timeline-item::after {
-
-            content: '';
-
-            position: absolute;
-
-            width: 20px;
-
-            height: 20px;
-
-            background-color: var(--white);
-
-            border: 4px solid var(--secondary);
-
-            border-radius: 50%;
-
-            top: 15px;
-
-            z-index: 1;
-
-        }
-
-       
-
-        .left::after {
-
-            right: -12px;
-
-        }
-
-       
-
-        .right::after {
-
-            left: -12px;
-
-        }
-
-       
-
-        .values-section {
-
-            margin-bottom: 4rem;
-
-        }
-
-       
-
-        .values-container {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
-            gap: 2rem;
-
-        }
-
-       
-
-        .value-card {
-
-            background-color: var(--white);
-
-            border-radius: 8px;
-
-            padding: 2rem;
-
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-
-            text-align: center;
-
-            transition: transform 0.3s ease;
-
-        }
-
-       
-
-        .value-card:hover {
-
-            transform: translateY(-10px);
-
-        }
-
-       
-
-        .value-icon {
-
-            font-size: 2.5rem;
-
-            color: var(--secondary);
-
-            margin-bottom: 1rem;
-
-        }
-
-       
-
-        .value-title {
-
-            font-size: 1.3rem;
-
-            font-weight: bold;
-
-            color: var(--primary);
-
-            margin-bottom: 1rem;
-
-        }
-
-       
-
-        .team-section {
-
-            margin-bottom: 4rem;
-
-        }
-
-       
-
-        .team-container {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            justify-content: center;
-
-            gap: 2rem;
-
-        }
-
-       
-
-        .team-member {
-
-            width: 280px;
-
-            background-color: var(--white);
-
-            border-radius: 8px;
-
-            overflow: hidden;
-
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-
-            transition: transform 0.3s ease;
-
-        }
-
-       
-
-        .team-member:hover {
-
-            transform: translateY(-10px);
-
-        }
-
-       
-
-        .member-image {
-
-            width: 100%;
-
-            height: 280px;
-
-            object-fit: cover;
-
-            background-color: #e0e0e0;
-
-        }
-
-       
-
-        .member-info {
-
-            padding: 1.5rem;
-
-        }
-
-       
-
-        .member-name {
-
-            font-size: 1.3rem;
-
-            font-weight: bold;
-
-            color: var(--primary);
-
-            margin-bottom: 0.5rem;
-
-        }
-
-       
-
-        .member-title {
-
-            font-size: 1rem;
-
-            color: var(--secondary);
-
-            margin-bottom: 1rem;
-
-        }
-
-       
-
-        .social-links {
-
-            display: flex;
-
-            justify-content: center;
-
-            margin-top: 1rem;
-
-        }
-
-       
-
-        .social-link {
-
-            display: inline-block;
-
-            width: 36px;
-
-            height: 36px;
-
-            background-color: var(--primary-light);
-
-            border-radius: 50%;
-
-            color: var(--primary);
-
-            text-align: center;
-
-            line-height: 36px;
-
-            margin: 0 5px;
-
-            text-decoration: none;
-
-            transition: all 0.3s ease;
-
-        }
-
-       
-
-        .social-link:hover {
-
-            background-color: var(--primary);
-
-            color: var(--white);
-
-        }
-
-       
-
-        .quote-section {
-
-            background-color: var(--secondary-light);
-
-            padding: 4rem 2rem;
-
-            text-align: center;
-
-            margin-bottom: 4rem;
-
-            border-radius: 8px;
-
-        }
-
-       
-
-        .quote {
-
-            font-size: 1.5rem;
-
-            font-style: italic;
-
-            color: var(--dark);
-
-            max-width: 800px;
-
-            margin: 0 auto 2rem;
-
-            position: relative;
-
-        }
-
-       
-
-        .quote::before {
-
-            content: """;
-
-            font-size: 4rem;
-
-            position: absolute;
-
-            left: -20px;
-
-            top: -20px;
-
-            color: rgba(232, 119, 34, 0.2);
-
-        }
-
-       
-
-        .quote::after {
-
-            content: """;
-
-            font-size: 4rem;
-
-            position: absolute;
-
-            right: -20px;
-
-            bottom: -40px;
-
-            color: rgba(232, 119, 34, 0.2);
-
-        }
-
-       
-
-        .quote-author {
-
-            font-weight: bold;
-
-            color: var(--primary);
-
-        }
-
-       
-
-        .cta-section {
-
-            background-color: var(--primary);
-
-            color: var(--white);
-
-            text-align: center;
-
-            padding: 3rem 2rem;
-
-            border-radius: 8px;
-
-            margin-bottom: 4rem;
-
-        }
-
-       
-
-        .cta-section h2 {
-
-            font-size: 2rem;
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .cta-section p {
-
-            font-size: 1.1rem;
-
-            max-width: 800px;
-
-            margin: 0 auto 2rem;
-
-        }
-
-       
-
-        .cta-btn {
-
-            display: inline-block;
-
-            background-color: var(--secondary);
-
-            color: var(--white);
-
-            padding: 0.8rem 2rem;
-
-            border-radius: 4px;
-
-            text-decoration: none;
-
-            font-weight: bold;
-
-            letter-spacing: 1px;
-
-            transition: all 0.3s ease;
-
-        }
-
-       
-
-        .cta-btn:hover {
-
-            background-color: #d2661b;
-
-            transform: scale(1.05);
-
-        }
-
-       
-
-        footer {
-
-            background-color: var(--dark);
-
-            color: var(--white);
-
-            padding: 2rem;
-
-            text-align: center;
-
-        }
-
-       
-
-        .footer-links {
-
-            display: flex;
-
-            justify-content: center;
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .footer-links a {
-
-            color: var(--white);
-
-            margin: 0 1rem;
-
-            text-decoration: none;
-
-        }
-
-       
-
-        .footer-links a:hover {
-
-            color: var(--secondary);
-
-        }
-
-       
-
-        .contact-info {
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .social-icons {
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .social-icons a {
-
-            color: var(--white);
-
-            margin: 0 0.5rem;
-
-            font-size: 1.5rem;
-
-            text-decoration: none;
-
-        }
-
-       
-
-        @media screen and (max-width: 768px) {
-
-            header {
-
-                flex-direction: column;
-
-                padding: 1rem;
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0a5c97',
+                        'primary-light': '#e8f4fc',
+                        secondary: '#e87722',
+                        'secondary-light': '#fdf1e8',
+                    }
+                }
             }
-
-           
-
-            nav ul {
-
-                margin-top: 1rem;
-
-                flex-wrap: wrap;
-
-                justify-content: center;
-
-            }
-
-           
-
-            nav ul li {
-
-                margin: 0.5rem;
-
-            }
-
-           
-
-            .hero h1 {
-
-                font-size: 2rem;
-
-            }
-
-           
-
-            .timeline::after {
-
-                left: 31px;
-
-            }
-
-           
-
-            .timeline-item {
-
-                width: 100%;
-
-                padding-left: 70px;
-
-                padding-right: 25px;
-
-            }
-
-           
-
-            .timeline-item.left::after, .timeline-item.right::after {
-
-                left: 19px;
-
-            }
-
-           
-
-            .timeline-item.right {
-
-                left: 0;
-
-            }
-
         }
-
-    </style>
-
+    </script>
 </head>
+<body class="bg-gray-100 text-gray-800 leading-relaxed">
+    <!-- Include header -->
+    <div id="header-placeholder"></div>
 
-<body>
-
-    <header>
-
-        <div class="logo">
-
-            <div class="logo-img">↗</div>
-
-            <span>Prograte Capital Ventures</span>
-
-        </div>
-
-        <nav>
-
-            <ul>
-
-                <li><a href="#">Home</a></li>
-
-                <li><a href="#" class="active">About</a></li>
-
-                <li><a href="#">Services</a></li>
-
-                <li><a href="#">Impact</a></li>
-
-                <li><a href="#">Apply</a></li>
-
-                <li><a href="#">Contact</a></li>
-
-            </ul>
-
-        </nav>
-
-    </header>
-
-   
-
-    <section class="hero">
-
-        <h1>About Prograte Capital Ventures</h1>
-
-        <p>Revolutionizing financial inclusion for women entrepreneurs in Uganda's informal sector</p>
-
-    </section>
-
-   
-
-    <div class="container">
-
-        <section class="mission-vision">
-
-            <div class="mission">
-
-                <div class="card-icon">🚀</div>
-
-                <div class="card-title">Our Mission</div>
-
-                <p>To empower Ugandan women entrepreneurs through targeted micro-investments and support, driving economic growth and gender equality in the informal sector.</p>
-
+    <!-- Main content -->
+    <main class="pt-20 md:pt-24">
+        <!-- Hero Section -->
+        <section class="bg-primary bg-opacity-70 text-white text-center py-24 md:py-48 px-4 md:px-8 relative bg-cover bg-center" style="background-image: linear-gradient(rgba(10, 92, 151, 0.7), rgba(10, 92, 151, 0.7)), url('/api/placeholder/1920/1080')">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-3xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight">About Prograte Capital Ventures</h1>
+                <p class="text-lg md:text-xl mb-6 md:mb-8 px-4">Revolutionizing financial inclusion for women entrepreneurs in Uganda's informal sector</p>
             </div>
-
-           
-
-            <div class="vision">
-
-                <div class="card-icon">🔭</div>
-
-                <div class="card-title">Our Vision</div>
-
-                <p>To be the leading catalyst for women's economic empowerment in Uganda, creating a thriving ecosystem of successful women-owned businesses that contribute significantly to the country's economic development.</p>
-
-            </div>
-
         </section>
 
-       
-
-        <section class="story-section">
-
-            <div class="section-title">
-
-                <h2>Our Story</h2>
-
-                <p>The journey of Prograte Capital Ventures from vision to impact</p>
-
+        <!-- Mission & Vision -->
+        <section class="py-12 md:py-20 px-4 md:px-8">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 hover:shadow-xl transition-all">
+                    <div class="text-4xl md:text-5xl text-center text-secondary mb-4 md:mb-6">🚀</div>
+                    <h3 class="text-xl md:text-2xl font-bold text-primary mb-4 md:mb-6 text-center">Our Mission</h3>
+                    <p class="text-gray-600 text-base md:text-lg">To empower Ugandan women entrepreneurs through targeted micro-investments and support, driving economic growth and gender equality in the informal sector.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 hover:shadow-xl transition-all">
+                    <div class="text-4xl md:text-5xl text-center text-secondary mb-4 md:mb-6">🔭</div>
+                    <h3 class="text-xl md:text-2xl font-bold text-primary mb-4 md:mb-6 text-center">Our Vision</h3>
+                    <p class="text-gray-600 text-base md:text-lg">To be the leading catalyst for women's economic empowerment in Uganda, creating a thriving ecosystem of successful women-owned businesses that contribute significantly to the country's economic development.</p>
+                </div>
             </div>
-
-           
-
-            <div class="timeline">
-
-                <div class="timeline-item left">
-
-                    <div class="timeline-content">
-
-                        <div class="timeline-date">Early 2023</div>
-
-                        <div class="timeline-title">Identifying the Gap</div>
-
-                        <p>Our founders recognized the critical financing gap for women entrepreneurs in Uganda's informal sector, who despite running profitable businesses, were systematically excluded from traditional financing options due to collateral requirements and formal documentation.</p>
-
-                    </div>
-
-                </div>
-
-               
-
-                <div class="timeline-item right">
-
-                    <div class="timeline-content">
-
-                        <div class="timeline-date">May 2023</div>
-
-                        <div class="timeline-title">Company Launch</div>
-
-                        <p>Prograte Capital Ventures was officially established with a mission to revolutionize access to capital for women entrepreneurs through an innovative dividend-based investment model, beginning operations in Jinja, Uganda.</p>
-
-                    </div>
-
-                </div>
-
-               
-
-                <div class="timeline-item left">
-
-                    <div class="timeline-content">
-
-                        <div class="timeline-date">August 2023</div>
-
-                        <div class="timeline-title">First 100 Entrepreneurs</div>
-
-                        <p>Within three months of launch, we had successfully deployed investments to our first 100 women entrepreneurs, validating our model and demonstrating the immense demand for our innovative financing approach.</p>
-
-                    </div>
-
-                </div>
-
-               
-
-                <div class="timeline-item right">
-
-                    <div class="timeline-content">
-
-                        <div class="timeline-date">October 2023</div>
-
-                        <div class="timeline-title">Expansion to Matugga-Kampala</div>
-
-                        <p>Following our initial success, we established our second branch in Matugga-Kampala, extending our reach to more women entrepreneurs in Uganda's urban centers and refining our business support services.</p>
-
-                    </div>
-
-                </div>
-
-               
-
-                <div class="timeline-item left">
-
-                    <div class="timeline-content">
-
-                        <div class="timeline-date">January 2024</div>
-
-                        <div class="timeline-title">Busia Branch Opening</div>
-
-                        <p>To serve entrepreneurs in border communities, we launched our third branch in Busia, creating new opportunities for cross-border traders and further diversifying our portfolio.</p>
-
-                    </div>
-
-                </div>
-
-               
-
-                <div class="timeline-item right">
-
-                    <div class="timeline-content">
-
-                        <div class="timeline-date">Present</div>
-
-                        <div class="timeline-title">400+ Businesses and Growing</div>
-
-                        <p>Today, we've successfully invested in over 400 women-owned businesses across our three locations, with 74% remaining actively engaged and 26% achieving financial independence. Our $68,000 investment portfolio continues to generate consistent monthly returns of 5-10%.</p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
         </section>
 
-       
+        <!-- Story Section -->
+        <section class="py-12 md:py-20 px-4 md:px-8 bg-primary-light">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 md:mb-8 text-center">Our Story</h2>
+                <p class="text-lg md:text-xl text-gray-700 mb-8 md:mb-12 text-center max-w-3xl mx-auto px-4">The journey of Prograte Capital Ventures from vision to impact</p>
+                
+                <!-- Timeline for desktop -->
+                <div class="hidden md:block relative max-w-4xl mx-auto">
+                    <div class="absolute w-1 bg-primary h-full left-1/2 transform -translate-x-1/2"></div>
+                    <div class="space-y-8">
+                        <div class="relative flex items-center w-full">
+                            <div class="w-1/2 pr-8">
+                                <div class="p-6 bg-white rounded-lg shadow-lg">
+                                    <div class="text-secondary font-bold mb-2">Early 2023</div>
+                                    <h3 class="text-xl font-bold text-primary mb-4">Identifying the Gap</h3>
+                                    <p>Our founders recognized the critical financing gap for women entrepreneurs in Uganda's informal sector, who despite running profitable businesses, were systematically excluded from traditional financing options due to collateral requirements and formal documentation.</p>
+                                </div>
+                            </div>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white border-4 border-secondary rounded-full z-10"></div>
+                        </div>
+                        <div class="relative flex items-center w-full">
+                            <div class="w-1/2 pl-8 ml-auto">
+                                <div class="p-6 bg-white rounded-lg shadow-lg">
+                                    <div class="text-secondary font-bold mb-2">May 2023</div>
+                                    <h3 class="text-xl font-bold text-primary mb-4">Company Launch</h3>
+                                    <p>Prograte Capital Ventures was officially established with a mission to revolutionize access to capital for women entrepreneurs through an innovative dividend-based investment model, beginning operations in Jinja, Uganda.</p>
+                                </div>
+                            </div>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white border-4 border-secondary rounded-full z-10"></div>
+                        </div>
+                        <div class="relative flex items-center w-full">
+                            <div class="w-1/2 pr-8">
+                                <div class="p-6 bg-white rounded-lg shadow-lg">
+                                    <div class="text-secondary font-bold mb-2">August 2023</div>
+                                    <h3 class="text-xl font-bold text-primary mb-4">First 100 Entrepreneurs</h3>
+                                    <p>Within three months of launch, we had successfully deployed investments to our first 100 women entrepreneurs, validating our model and demonstrating the immense demand for our innovative financing approach.</p>
+                                </div>
+                            </div>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white border-4 border-secondary rounded-full z-10"></div>
+                        </div>
+                        <div class="relative flex items-center w-full">
+                            <div class="w-1/2 pl-8 ml-auto">
+                                <div class="p-6 bg-white rounded-lg shadow-lg">
+                                    <div class="text-secondary font-bold mb-2">October 2023</div>
+                                    <h3 class="text-xl font-bold text-primary mb-4">Expansion to Matugga-Kampala</h3>
+                                    <p>Following our initial success, we established our second branch in Matugga-Kampala, extending our reach to more women entrepreneurs in Uganda's urban centers and refining our business support services.</p>
+                                </div>
+                            </div>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white border-4 border-secondary rounded-full z-10"></div>
+                        </div>
+                        <div class="relative flex items-center w-full">
+                            <div class="w-1/2 pr-8">
+                                <div class="p-6 bg-white rounded-lg shadow-lg">
+                                    <div class="text-secondary font-bold mb-2">January 2024</div>
+                                    <h3 class="text-xl font-bold text-primary mb-4">Busia Branch Opening</h3>
+                                    <p>To serve entrepreneurs in border communities, we launched our third branch in Busia, creating new opportunities for cross-border traders and further diversifying our portfolio.</p>
+                                </div>
+                            </div>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white border-4 border-secondary rounded-full z-10"></div>
+                        </div>
+                        <div class="relative flex items-center w-full">
+                            <div class="w-1/2 pl-8 ml-auto">
+                                <div class="p-6 bg-white rounded-lg shadow-lg">
+                                    <div class="text-secondary font-bold mb-2">Present</div>
+                                    <h3 class="text-xl font-bold text-primary mb-4">400+ Businesses and Growing</h3>
+                                    <p>Today, we've successfully invested in over 400 women-owned businesses across our three locations, with 74% remaining actively engaged and 26% achieving financial independence. Our $68,000 investment portfolio continues to generate consistent monthly returns of 5-10%.</p>
+                                </div>
+                            </div>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white border-4 border-secondary rounded-full z-10"></div>
+                        </div>
+                    </div>
+                </div>
 
-        <section class="values-section">
-
-            <div class="section-title">
-
-                <h2>Our Core Values</h2>
-
-                <p>The principles that guide our work and shape our approach</p>
-
+                <!-- Timeline for mobile -->
+                <div class="md:hidden space-y-6">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div class="text-secondary font-bold mb-2">Early 2023</div>
+                        <h3 class="text-xl font-bold text-primary mb-3">Identifying the Gap</h3>
+                        <p class="text-gray-600">Our founders recognized the critical financing gap for women entrepreneurs in Uganda's informal sector, who despite running profitable businesses, were systematically excluded from traditional financing options.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div class="text-secondary font-bold mb-2">May 2023</div>
+                        <h3 class="text-xl font-bold text-primary mb-3">Company Launch</h3>
+                        <p class="text-gray-600">Prograte Capital Ventures was officially established with a mission to revolutionize access to capital for women entrepreneurs through an innovative dividend-based investment model, beginning operations in Jinja, Uganda.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div class="text-secondary font-bold mb-2">August 2023</div>
+                        <h3 class="text-xl font-bold text-primary mb-3">First 100 Entrepreneurs</h3>
+                        <p class="text-gray-600">Within three months of launch, we had successfully deployed investments to our first 100 women entrepreneurs, validating our model and demonstrating the immense demand for our innovative financing approach.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div class="text-secondary font-bold mb-2">October 2023</div>
+                        <h3 class="text-xl font-bold text-primary mb-3">Expansion to Matugga-Kampala</h3>
+                        <p class="text-gray-600">Following our initial success, we established our second branch in Matugga-Kampala, extending our reach to more women entrepreneurs in Uganda's urban centers and refining our business support services.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div class="text-secondary font-bold mb-2">January 2024</div>
+                        <h3 class="text-xl font-bold text-primary mb-3">Busia Branch Opening</h3>
+                        <p class="text-gray-600">To serve entrepreneurs in border communities, we launched our third branch in Busia, creating new opportunities for cross-border traders and further diversifying our portfolio.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div class="text-secondary font-bold mb-2">Present</div>
+                        <h3 class="text-xl font-bold text-primary mb-3">400+ Businesses and Growing</h3>
+                        <p class="text-gray-600">Today, we've successfully invested in over 400 women-owned businesses across our three locations, with 74% remaining actively engaged and 26% achieving financial independence. Our $68,000 investment portfolio continues to generate consistent monthly returns of 5-10%.</p>
+                    </div>
+                </div>
             </div>
-
-           
-
-            <div class="values-container">
-
-                <div class="value-card">
-
-                    <div class="value-icon">⚖️</div>
-
-                    <div class="value-title">Financial Inclusion</div>
-
-                    <p>We believe everyone deserves access to fair and equitable financial services, regardless of their formal status or collateral ownership. Our model is designed to break down traditional barriers and create opportunities for the financially excluded.</p>
-
-                </div>
-
-               
-
-                <div class="value-card">
-
-                    <div class="value-icon">👩‍💼</div>
-
-                    <div class="value-title">Women's Empowerment</div>
-
-                    <p>We recognize the transformative power of investing in women. When women entrepreneurs succeed, families prosper, communities thrive, and economies grow. Our focus on women-owned businesses is strategic and impactful.</p>
-
-                </div>
-
-               
-
-                <div class="value-card">
-
-                    <div class="value-icon">🤝</div>
-
-                    <div class="value-title">Partnership Approach</div>
-
-                    <p>We see our relationship with entrepreneurs as a partnership, not just a transaction. Our success is tied to their success, and we work collaboratively to ensure sustainable growth and mutual benefit.</p>
-
-                </div>
-
-               
-
-                <div class="value-card">
-
-                    <div class="value-icon">🌱</div>
-
-                    <div class="value-title">Sustainable Growth</div>
-
-                    <p>We prioritize long-term, sustainable growth over quick returns. Our approach nurtures businesses to develop strong foundations, ensuring lasting impact for entrepreneurs, investors, and communities.</p>
-
-                </div>
-
-               
-
-                <div class="value-card">
-
-                    <div class="value-icon">💡</div>
-
-                    <div class="value-title">Innovation</div>
-
-                    <p>We continuously innovate to address the unique challenges of Uganda's informal sector. Our dividend-based model represents a fundamental rethinking of how capital can flow to underserved entrepreneurs.</p>
-
-                </div>
-
-               
-
-                <div class="value-card">
-
-                    <div class="value-icon">📊</div>
-
-                    <div class="value-title">Data-Driven Impact</div>
-
-                    <p>We measure what matters. Our rigorous approach to tracking both financial and social metrics ensures transparency, accountability, and continuous improvement in our impact.</p>
-
-                </div>
-
-            </div>
-
         </section>
 
-       
-
-        <section class="team-section">
-
-            <div class="section-title">
-
-                <h2>Our Leadership Team</h2>
-
-                <p>Meet the dedicated professionals driving our mission forward</p>
-
+        <!-- Values Section -->
+        <section class="py-12 md:py-20 px-4 md:px-8">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 md:mb-8 text-center">Our Core Values</h2>
+                <p class="text-lg md:text-xl text-gray-700 mb-8 md:mb-12 text-center max-w-3xl mx-auto px-4">The principles that guide our work and shape our approach</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 hover:shadow-xl transition-all transform hover:-translate-y-1">
+                        <div class="text-4xl md:text-5xl text-secondary mb-4 md:mb-6 text-center">⚖️</div>
+                        <h3 class="text-xl md:text-2xl font-bold text-primary mb-3 md:mb-4 text-center">Financial Inclusion</h3>
+                        <p class="text-gray-600 text-base md:text-lg">We believe everyone deserves access to fair and equitable financial services, regardless of their formal status or collateral ownership.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 hover:shadow-xl transition-all transform hover:-translate-y-1">
+                        <div class="text-4xl md:text-5xl text-secondary mb-4 md:mb-6 text-center">👩‍💼</div>
+                        <h3 class="text-xl md:text-2xl font-bold text-primary mb-3 md:mb-4 text-center">Women's Empowerment</h3>
+                        <p class="text-gray-600 text-base md:text-lg">We recognize the transformative power of investing in women. When women entrepreneurs succeed, families prosper, communities thrive, and economies grow. Our focus on women-owned businesses is strategic and impactful.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 hover:shadow-xl transition-all transform hover:-translate-y-1">
+                        <div class="text-4xl md:text-5xl text-secondary mb-4 md:mb-6 text-center">🤝</div>
+                        <h3 class="text-xl md:text-2xl font-bold text-primary mb-3 md:mb-4 text-center">Partnership Approach</h3>
+                        <p class="text-gray-600 text-base md:text-lg">We see our relationship with entrepreneurs as a partnership, not just a transaction. Our success is tied to their success, and we work collaboratively to ensure sustainable growth and mutual benefit.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 hover:shadow-xl transition-all transform hover:-translate-y-1">
+                        <div class="text-4xl md:text-5xl text-secondary mb-4 md:mb-6 text-center">🌱</div>
+                        <h3 class="text-xl md:text-2xl font-bold text-primary mb-3 md:mb-4 text-center">Sustainable Growth</h3>
+                        <p class="text-gray-600 text-base md:text-lg">We prioritize long-term, sustainable growth over quick returns. Our approach nurtures businesses to develop strong foundations, ensuring lasting impact for entrepreneurs, investors, and communities.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 hover:shadow-xl transition-all transform hover:-translate-y-1">
+                        <div class="text-4xl md:text-5xl text-secondary mb-4 md:mb-6 text-center">💡</div>
+                        <h3 class="text-xl md:text-2xl font-bold text-primary mb-3 md:mb-4 text-center">Innovation</h3>
+                        <p class="text-gray-600 text-base md:text-lg">We continuously innovate to address the unique challenges of Uganda's informal sector. Our dividend-based model represents a fundamental rethinking of how capital can flow to underserved entrepreneurs.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 hover:shadow-xl transition-all transform hover:-translate-y-1">
+                        <div class="text-4xl md:text-5xl text-secondary mb-4 md:mb-6 text-center">📊</div>
+                        <h3 class="text-xl md:text-2xl font-bold text-primary mb-3 md:mb-4 text-center">Data-Driven Impact</h3>
+                        <p class="text-gray-600 text-base md:text-lg">We measure what matters. Our rigorous approach to tracking both financial and social metrics ensures transparency, accountability, and continuous improvement in our impact.</p>
+                    </div>
+                </div>
             </div>
-
-           
-
-            <div class="team-container">
-
-                <div class="team-member">
-
-                    <img src="/api/placeholder/280/280" alt="Muwanika Jdiobe" class="member-image">
-
-                    <div class="member-info">
-
-                        <div class="member-name">Muwanika Jdiobe, Ph.D.</div>
-
-                        <div class="member-title">Co-Founder & CEO</div>
-
-                        <p>As CEO, Muwanika prioritizes improving Ugandan women's lives while building a strong management team and steering the company toward sustainable growth and success. He brings extensive experience in development economics and financial inclusion.</p>
-
-                        <div class="social-links">
-
-                            <a href="#" class="social-link">in</a>
-
-                            <a href="#" class="social-link">tw</a>
-
-                            <a href="#" class="social-link">em</a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-               
-
-                <div class="team-member">
-
-                    <img src="/api/placeholder/280/280" alt="Angella Kawala" class="member-image">
-
-                    <div class="member-info">
-
-                        <div class="member-name">Angella Kawala</div>
-
-                        <div class="member-title">COO & Investment Director</div>
-
-                        <p>Angella oversees daily operations and leads our investment strategy. She ensures the availability of necessary resources for company progress, monitors team performance, and makes critical investment decisions to maximize impact and returns.</p>
-
-                        <div class="social-links">
-
-                            <a href="#" class="social-link">in</a>
-
-                            <a href="#" class="social-link">tw</a>
-
-                            <a href="#" class="social-link">em</a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-               
-
-                <div class="team-member">
-
-                    <img src="/api/placeholder/280/280" alt="Denis Muyingo" class="member-image">
-
-                    <div class="member-info">
-
-                        <div class="member-name">Denis Muyingo</div>
-
-                        <div class="member-title">Chief Financial Officer</div>
-
-                        <p>Denis manages and raises capital for the company while making strategic capital investment decisions. His financial expertise ensures the sustainability of our operations and the prudent allocation of resources across our portfolio.</p>
-
-                        <div class="social-links">
-
-                            <a href="#" class="social-link">in</a>
-
-                            <a href="#" class="social-link">tw</a>
-
-                            <a href="#" class="social-link">em</a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-               
-
-                <div class="team-member">
-
-                    <img src="/api/placeholder/280/280" alt="Charles Waigumba" class="member-image">
-
-                    <div class="member-info">
-
-                        <div class="member-name">Charles Waigumba</div>
-
-                        <div class="member-title">Community Relations Director</div>
-
-                        <p>Charles builds and maintains strong relationships with local communities while ensuring the company's initiatives align with community needs and values. His deep networks are essential to our community validation process and trust-building efforts.</p>
-
-                        <div class="social-links">
-
-                            <a href="#" class="social-link">in</a>
-
-                            <a href="#" class="social-link">tw</a>
-
-                            <a href="#" class="social-link">em</a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-               
-
-                <div class="team-member">
-
-                    <img src="/api/placeholder/280/280" alt="Sarah Nambi" class="member-image">
-
-                    <div class="member-info">
-
-                        <div class="member-name">Sarah Nambi</div>
-
-                        <div class="member-title">IT Specialist</div>
-
-                        <p>Sarah leads our technology implementation and digital transformation efforts. She develops and maintains our portfolio management systems, mobile integration, and analytics infrastructure that enables us to efficiently track performance and impact across all operations.</p>
-
-                        <div class="social-links">
-
-                            <a href="#" class="social-link">in</a>
-
-                            <a href="#" class="social-link">tw</a>
-
-                            <a href="#" class="social-link">em</a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-               
-
-                <div class="team-member">
-
-                    <img src="/api/placeholder/280/280" alt="Robert Okello" class="member-image">
-
-                    <div class="member-info">
-
-                        <div class="member-name">Robert Okello</div>
-
-                        <div class="member-title">Chief Strategy Officer</div>
-
-                        <p>Robert develops our long-term growth strategies and oversees our expansion into new markets. His expertise in market analysis and strategic planning ensures that our operational model evolves to meet changing market conditions while maximizing our social and financial impact.</p>
-
-                        <div class="social-links">
-
-                            <a href="#" class="social-link">in</a>
-
-                            <a href="#" class="social-link">tw</a>
-
-                            <a href="#" class="social-link">em</a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-               
-
-                <div class="team-member">
-
-                    <img src="/api/placeholder/280/280" alt="Faith Namutebi" class="member-image">
-
-                    <div class="member-info">
-
-                        <div class="member-name">Faith Namutebi</div>
-
-                        <div class="member-title">Administrator</div>
-
-                        <p>Faith coordinates our administrative functions across all three branches, ensuring smooth daily operations and efficient resource management. Her meticulous attention to detail and organizational skills are vital to maintaining our operational excellence and client service standards.</p>
-
-                        <div class="social-links">
-
-                            <a href="#" class="social-link">in</a>
-
-                            <a href="#" class="social-link">tw</a>
-
-                            <a href="#" class="social-link">em</a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
         </section>
 
-       
-
-        <section class="quote-section">
-
-            <div class="quote">
-
-                "We're not just providing capital — we're building a sustainable ecosystem that transforms women entrepreneurs into economic powerhouses. By eliminating traditional barriers and providing comprehensive support, we're creating a pathway to financial inclusion and independence."
-
+        <!-- Team Section -->
+        <section class="py-12 md:py-20 px-4 md:px-8 bg-primary-light">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 md:mb-8 text-center">Our Leadership Team</h2>
+                <p class="text-lg md:text-xl text-gray-700 mb-8 md:mb-12 text-center max-w-3xl mx-auto px-4">Meet the dedicated professionals driving our mission forward</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-1">
+                        <img src="/api/placeholder/400/400" alt="Muwanika Jdiobe" class="w-full h-48 md:h-64 object-cover">
+                        <div class="p-4 md:p-6">
+                            <h3 class="text-lg md:text-xl font-bold text-primary mb-2">Muwanika Jdiobe, Ph.D.</h3>
+                            <p class="text-secondary mb-3 md:mb-4">Co-Founder & CEO</p>
+                            <p class="text-gray-600 text-sm md:text-base mb-4">As CEO, Muwanika prioritizes improving Ugandan women's lives while building a strong management team and steering the company toward sustainable growth and success.</p>
+                            <div class="flex justify-center space-x-3 md:space-x-4">
+                                <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-primary-light rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">in</a>
+                                <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-primary-light rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">tw</a>
+                                <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-primary-light rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">em</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-1">
+                        <img src="/api/placeholder/400/400" alt="Angella Kawala" class="w-full h-48 md:h-64 object-cover">
+                        <div class="p-4 md:p-6">
+                            <h3 class="text-lg md:text-xl font-bold text-primary mb-2">Angella Kawala</h3>
+                            <p class="text-secondary mb-3 md:mb-4">COO & Investment Director</p>
+                            <p class="text-gray-600 text-sm md:text-base mb-4">Angella oversees daily operations and leads our investment strategy. She ensures the availability of necessary resources for company progress, monitors team performance, and makes critical investment decisions to maximize impact and returns.</p>
+                            <div class="flex justify-center space-x-3 md:space-x-4">
+                                <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-primary-light rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">in</a>
+                                <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-primary-light rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">tw</a>
+                                <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-primary-light rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">em</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-1">
+                        <img src="/api/placeholder/400/400" alt="Denis Muyingo" class="w-full h-48 md:h-64 object-cover">
+                        <div class="p-4 md:p-6">
+                            <h3 class="text-lg md:text-xl font-bold text-primary mb-2">Denis Muyingo</h3>
+                            <p class="text-secondary mb-3 md:mb-4">Chief Financial Officer</p>
+                            <p class="text-gray-600 text-sm md:text-base mb-4">Denis manages and raises capital for the company while making strategic capital investment decisions. His financial expertise ensures the sustainability of our operations and the prudent allocation of resources across our portfolio.</p>
+                            <div class="flex justify-center space-x-3 md:space-x-4">
+                                <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-primary-light rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">in</a>
+                                <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-primary-light rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">tw</a>
+                                <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-primary-light rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">em</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-1">
+                        <img src="/api/placeholder/400/400" alt="Charles Waigumba" class="w-full h-48 md:h-64 object-cover">
+                        <div class="p-4 md:p-6">
+                            <h3 class="text-lg md:text-xl font-bold text-primary mb-2">Charles Waigumba</h3>
+                            <p class="text-secondary mb-3 md:mb-4">Community Relations Director</p>
+                            <p class="text-gray-600 text-sm md:text-base mb-4">Charles builds and maintains strong relationships with local communities while ensuring the company's initiatives align with community needs and values. His deep networks are essential to our community validation process and trust-building efforts.</p>
+                            <div class="flex justify-center space-x-3 md:space-x-4">
+                                <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-primary-light rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">in</a>
+                                <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-primary-light rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">tw</a>
+                                <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-primary-light rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">em</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-1">
+                        <img src="/api/placeholder/400/400" alt="Sarah Nambi" class="w-full h-48 md:h-64 object-cover">
+                        <div class="p-4 md:p-6">
+                            <h3 class="text-lg md:text-xl font-bold text-primary mb-2">Sarah Nambi</h3>
+                            <p class="text-secondary mb-3 md:mb-4">IT Specialist</p>
+                            <p class="text-gray-600 text-sm md:text-base mb-4">Sarah leads our technology implementation and digital transformation efforts. She develops and maintains our portfolio management systems, mobile integration, and analytics infrastructure that enables us to efficiently track performance and impact across all operations.</p>
+                            <div class="flex justify-center space-x-3 md:space-x-4">
+                                <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-primary-light rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">in</a>
+                                <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-primary-light rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">tw</a>
+                                <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-primary-light rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">em</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-1">
+                        <img src="/api/placeholder/400/400" alt="Robert Okello" class="w-full h-48 md:h-64 object-cover">
+                        <div class="p-4 md:p-6">
+                            <h3 class="text-lg md:text-xl font-bold text-primary mb-2">Robert Okello</h3>
+                            <p class="text-secondary mb-3 md:mb-4">Chief Strategy Officer</p>
+                            <p class="text-gray-600 text-sm md:text-base mb-4">Robert develops our long-term growth strategies and oversees our expansion into new markets. His expertise in market analysis and strategic planning ensures that our operational model evolves to meet changing market conditions while maximizing our social and financial impact.</p>
+                            <div class="flex justify-center space-x-3 md:space-x-4">
+                                <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-primary-light rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">in</a>
+                                <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-primary-light rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">tw</a>
+                                <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-primary-light rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">em</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-1">
+                        <img src="/api/placeholder/400/400" alt="Faith Namutebi" class="w-full h-48 md:h-64 object-cover">
+                        <div class="p-4 md:p-6">
+                            <h3 class="text-lg md:text-xl font-bold text-primary mb-2">Faith Namutebi</h3>
+                            <p class="text-secondary mb-3 md:mb-4">Administrator</p>
+                            <p class="text-gray-600 text-sm md:text-base mb-4">Faith coordinates our administrative functions across all three branches, ensuring smooth daily operations and efficient resource management. Her meticulous attention to detail and organizational skills are vital to maintaining our operational excellence and client service standards.</p>
+                            <div class="flex justify-center space-x-3 md:space-x-4">
+                                <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-primary-light rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">in</a>
+                                <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-primary-light rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">tw</a>
+                                <a href="#" class="w-8 h-8 md:w-10 md:h-10 bg-primary-light rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">em</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="quote-author">— Muwanika Jdiobe, Ph.D., Co-Founder & CEO</div>
-
         </section>
 
-       
-
-        <section class="cta-section">
-
-            <h2>Join Our Mission</h2>
-
-            <p>Whether you're a potential investor, entrepreneur, or partner, there are many ways to get involved with Prograte Capital Ventures. Together, we can revolutionize financial inclusion in Uganda while generating strong, consistent returns.</p>
-
-            <a href="#" class="cta-btn">Get Involved</a>
-
+        <!-- Quote Section -->
+        <section class="py-12 md:py-20 px-4 md:px-8">
+            <div class="max-w-4xl mx-auto bg-secondary-light rounded-lg p-6 md:p-12 text-center">
+                <blockquote class="text-xl md:text-2xl italic text-gray-800 mb-6 md:mb-8 relative">
+                    "We're not just providing capital — we're building a sustainable ecosystem that transforms women entrepreneurs into economic powerhouses. By eliminating traditional barriers and providing comprehensive support, we're creating a pathway to financial inclusion and independence."
+                </blockquote>
+                <div class="font-bold text-primary text-lg md:text-xl">— Muwanika Jdiobe, Ph.D., Co-Founder & CEO</div>
+            </div>
         </section>
 
-    </div>
+        <!-- CTA Section -->
+        <section class="py-12 md:py-20 px-4 md:px-8 bg-primary text-white">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 md:mb-6">Join Our Mission</h2>
+                <p class="text-lg md:text-xl mb-6 md:mb-8 px-4">Whether you're a potential investor, entrepreneur, or partner, there are many ways to get involved with Prograte Capital Ventures. Together, we can revolutionize financial inclusion in Uganda while generating strong, consistent returns.</p>
+                <a href="#" class="inline-block bg-secondary text-white px-8 md:px-10 py-3 md:py-4 rounded-full font-bold tracking-wide hover:bg-opacity-90 transform hover:scale-105 transition-all text-base md:text-lg">Get Involved</a>
+            </div>
+        </section>
+    </main>
 
-   
+    <!-- Include footer -->
+    <div id="footer-placeholder"></div>
 
-    <footer>
-
-        <div class="footer-links">
-
-            <a href="#">Home</a>
-
-            <a href="#">About</a>
-
-            <a href="#">Services</a>
-
-            <a href="#">Impact</a>
-
-            <a href="#">Apply</a>
-
-            <a href="#">Contact</a>
-
-        </div>
-
-        <div class="contact-info">
-
-            <p>Email: info@progratecapital.com | Phone: +256 123 456 789</p>
-
-            <p>Branches: Jinja, Matugga-Kampala, and Busia</p>
-
-        </div>
-
-        <div class="social-icons">
-
-            <a href="#">FB</a>
-
-            <a href="#">IG</a>
-
-            <a href="#">TW</a>
-
-            <a href="#">LI</a>
-
-        </div>
-
-        <p>&copy; 2025 Prograte Capital Ventures Ltd. All Rights Reserved.</p>
-
-    </footer>
-
+    <!-- Component Loading Script -->
+    <script>
+        // Load header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+        
+        // Load footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
 </body>
-
 </html>

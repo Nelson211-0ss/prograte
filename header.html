@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<header class="bg-primary text-white px-4 md:px-8 py-4 flex justify-between items-center fixed w-full shadow-md z-40">
+    <div class="flex items-center text-lg md:text-2xl font-bold">
+        <div class="w-8 h-8 md:w-10 md:h-10 bg-white rounded-full flex items-center justify-center text-xl md:text-2xl mr-2 md:mr-3">↗</div>
+        <span class="hidden sm:inline">Prograte Capital Ventures</span>
+        <span class="sm:hidden">Prograte</span>
+    </div>
+
+    <!-- Mobile menu button -->
+    <button id="mobile-menu-button" class="md:hidden flex items-center px-3 py-2 text-white hover:text-secondary transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:block">
+        <ul class="flex space-x-6">
+            <li><a href="index.html" class="py-2 px-3 hover:text-secondary transition-colors nav-link" data-page="home">Home</a></li>
+            <li><a href="about.html" class="py-2 px-3 hover:text-secondary transition-colors nav-link" data-page="about">About</a></li>
+            <li><a href="service.html" class="py-2 px-3 hover:text-secondary transition-colors nav-link" data-page="services">Services</a></li>
+            <li><a href="impact.html" class="py-2 px-3 hover:text-secondary transition-colors nav-link" data-page="impact">Impact</a></li>
+            <li><a href="apply.html" class="py-2 px-3 hover:text-secondary transition-colors nav-link" data-page="apply">Apply</a></li>
+            <li><a href="contact.html   " class="py-2 px-3 hover:text-secondary transition-colors nav-link" data-page="contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Mobile Navigation Menu -->
+<div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-primary z-50">
+    <div class="min-h-screen flex flex-col">
+        <div class="flex justify-between items-center p-4">
+            <div class="flex items-center text-lg font-bold">
+                <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-xl mr-2">↗</div>
+                <span>Prograte</span>
+            </div>
+            <button id="mobile-menu-close" class="text-white hover:text-secondary transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <nav class="flex-1 flex items-center">
+            <ul class="w-full flex flex-col items-center space-y-6">
+                <li class="w-full"><a href="index.html" class="block w-full text-center text-xl font-semibold text-white hover:text-secondary transition-colors nav-link py-3" data-page="home">Home</a></li>
+                <li class="w-full"><a href="about.html" class="block w-full text-center text-xl font-semibold text-white hover:text-secondary transition-colors nav-link py-3" data-page="about">About</a></li>
+                <li class="w-full"><a href="service.html" class="block w-full text-center text-xl font-semibold text-white hover:text-secondary transition-colors nav-link py-3" data-page="services">Services</a></li>
+                <li class="w-full"><a href="impact.html" class="block w-full text-center text-xl font-semibold text-white hover:text-secondary transition-colors nav-link py-3" data-page="impact">Impact</a></li>
+                <li class="w-full"><a href="" class="block w-full text-center text-xl font-semibold text-white hover:text-secondary transition-colors nav-link py-3" data-page="apply">Apply</a></li>
+                <li class="w-full"><a href="#" class="block w-full text-center text-xl font-semibold text-white hover:text-secondary transition-colors nav-link py-3" data-page="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Highlight current page in navigation
+        const currentPage = window.location.pathname.split('/').pop().replace('.html', '') || 'home';
+        document.querySelectorAll(`[data-page="${currentPage}"]`).forEach(link => {
+            link.classList.add('border-b-2', 'border-secondary');
+        });
+
+        // Mobile menu functionality
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden');
+            
+            // Log for debugging
+            console.log('Toggle menu clicked');
+            console.log('Menu hidden:', mobileMenu.classList.contains('hidden'));
+        }
+
+        // Add click event listeners
+        mobileMenuButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        mobileMenuClose.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMenu();
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && 
+                !mobileMenuButton.contains(e.target) && 
+                !mobileMenu.classList.contains('hidden')) {
+                toggleMenu();
+            }
+        });
+
+        // Prevent clicks inside mobile menu from closing it
+        mobileMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    });
+</script> 

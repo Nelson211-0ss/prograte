@@ -1,1781 +1,196 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Our Impact | Prograte Capital Ventures</title>
-
-    <style>
-
-        :root {
-
-            --primary: #0a5c97;
-
-            --primary-light: #e8f4fc;
-
-            --secondary: #e87722;
-
-            --secondary-light: #fdf1e8;
-
-            --light: #f5f5f5;
-
-            --dark: #333333;
-
-            --white: #ffffff;
-
-            --success: #27ae60;
-
-            --info: #3498db;
-
-            --warning: #f39c12;
-
-        }
-
-       
-
-        * {
-
-            margin: 0;
-
-            padding: 0;
-
-            box-sizing: border-box;
-
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-        }
-
-       
-
-        body {
-
-            background-color: var(--light);
-
-            color: var(--dark);
-
-            line-height: 1.6;
-
-        }
-
-       
-
-        header {
-
-            background-color: var(--primary);
-
-            color: var(--white);
-
-            padding: 1rem 2rem;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-
-        }
-
-       
-
-        .logo {
-
-            font-size: 1.5rem;
-
-            font-weight: bold;
-
-            display: flex;
-
-            align-items: center;
-
-        }
-
-       
-
-        .logo-img {
-
-            width: 40px;
-
-            height: 40px;
-
-            margin-right: 10px;
-
-            background-color: var(--white);
-
-            border-radius: 50%;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            font-size: 24px;
-
-        }
-
-       
-
-        nav ul {
-
-            display: flex;
-
-            list-style: none;
-
-        }
-
-       
-
-        nav ul li {
-
-            margin-left: 1.5rem;
-
-        }
-
-       
-
-        nav ul li a {
-
-            color: var(--white);
-
-            text-decoration: none;
-
-            font-weight: 500;
-
-            padding: 0.5rem;
-
-            transition: all 0.3s ease;
-
-        }
-
-       
-
-        nav ul li a:hover {
-
-            color: var(--secondary);
-
-        }
-
-       
-
-        .active {
-
-            border-bottom: 3px solid var(--secondary);
-
-        }
-
-       
-
-        .hero {
-
-            background-image: linear-gradient(rgba(10, 92, 151, 0.8), rgba(10, 92, 151, 0.8)), url('/api/placeholder/1200/400');
-
-            background-size: cover;
-
-            background-position: center;
-
-            color: var(--white);
-
-            text-align: center;
-
-            padding: 4rem 2rem;
-
-        }
-
-       
-
-        .hero h1 {
-
-            font-size: 2.5rem;
-
-            margin-bottom: 1rem;
-
-        }
-
-       
-
-        .hero p {
-
-            font-size: 1.2rem;
-
-            max-width: 800px;
-
-            margin: 0 auto;
-
-        }
-
-       
-
-        .container {
-
-            max-width: 1200px;
-
-            margin: 0 auto;
-
-            padding: 4rem 2rem;
-
-        }
-
-       
-
-        .section-title {
-
-            text-align: center;
-
-            margin-bottom: 3rem;
-
-        }
-
-       
-
-        .section-title h2 {
-
-            font-size: 2.2rem;
-
-            color: var(--primary);
-
-            margin-bottom: 1rem;
-
-            position: relative;
-
-            display: inline-block;
-
-        }
-
-       
-
-        .section-title h2::after {
-
-            content: "";
-
-            position: absolute;
-
-            width: 50%;
-
-            height: 3px;
-
-            background-color: var(--secondary);
-
-            bottom: -10px;
-
-            left: 25%;
-
-        }
-
-       
-
-        .section-title p {
-
-            font-size: 1.1rem;
-
-            max-width: 800px;
-
-            margin: 0 auto;
-
-        }
-
-       
-
-        .stats-container {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
-            gap: 2rem;
-
-            margin-bottom: 4rem;
-
-        }
-
-       
-
-        .stat-card {
-
-            background-color: var(--white);
-
-            border-radius: 8px;
-
-            padding: 2rem;
-
-            text-align: center;
-
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-
-            transition: transform 0.3s ease;
-
-        }
-
-       
-
-        .stat-card:hover {
-
-            transform: translateY(-10px);
-
-        }
-
-       
-
-        .stat-icon {
-
-            font-size: 2.5rem;
-
-            margin-bottom: 1rem;
-
-            color: var(--secondary);
-
-        }
-
-       
-
-        .stat-number {
-
-            font-size: 2.5rem;
-
-            font-weight: bold;
-
-            color: var(--primary);
-
-            margin-bottom: 0.5rem;
-
-        }
-
-       
-
-        .stat-label {
-
-            font-size: 1rem;
-
-            color: var(--dark);
-
-        }
-
-       
-
-        .impact-dashboard {
-
-            background-color: var(--primary-light);
-
-            border-radius: 8px;
-
-            padding: 2rem;
-
-            margin-bottom: 4rem;
-
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-
-        }
-
-       
-
-        .dashboard-title {
-
-            font-size: 1.5rem;
-
-            color: var(--primary);
-
-            margin-bottom: 1.5rem;
-
-            text-align: center;
-
-        }
-
-       
-
-        .dashboard-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
-            gap: 1.5rem;
-
-        }
-
-       
-
-        .metric-card {
-
-            background-color: var(--white);
-
-            border-radius: 8px;
-
-            padding: 1.5rem;
-
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-
-        }
-
-       
-
-        .metric-header {
-
-            display: flex;
-
-            align-items: center;
-
-            margin-bottom: 1rem;
-
-        }
-
-       
-
-        .metric-icon {
-
-            font-size: 1.8rem;
-
-            margin-right: 1rem;
-
-        }
-
-       
-
-        .metric-title {
-
-            font-size: 1.2rem;
-
-            font-weight: bold;
-
-            color: var(--primary);
-
-        }
-
-       
-
-        .metric-value {
-
-            font-size: 2rem;
-
-            font-weight: bold;
-
-            margin-bottom: 0.5rem;
-
-            color: var(--secondary);
-
-        }
-
-       
-
-        .metric-description {
-
-            font-size: 0.9rem;
-
-            color: var(--dark);
-
-        }
-
-       
-
-        .impact-categories {
-
-            margin-bottom: 4rem;
-
-        }
-
-       
-
-        .category-tabs {
-
-            display: flex;
-
-            justify-content: center;
-
-            margin-bottom: 2rem;
-
-            border-bottom: 1px solid #ddd;
-
-        }
-
-       
-
-        .category-tab {
-
-            padding: 1rem 2rem;
-
-            margin: 0 0.5rem;
-
-            cursor: pointer;
-
-            border-bottom: 3px solid transparent;
-
-            font-weight: bold;
-
-            transition: all 0.3s ease;
-
-        }
-
-       
-
-        .category-tab.active {
-
-            border-bottom: 3px solid var(--secondary);
-
-            color: var(--primary);
-
-        }
-
-       
-
-        .category-content {
-
-            display: none;
-
-        }
-
-       
-
-        .category-content.active {
-
-            display: block;
-
-        }
-
-       
-
-        .progress-container {
-
-            margin-bottom: 2rem;
-
-        }
-
-       
-
-        .progress-label {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            margin-bottom: 0.5rem;
-
-        }
-
-       
-
-        .progress-title {
-
-            font-weight: bold;
-
-        }
-
-       
-
-        .progress-value {
-
-            color: var(--primary);
-
-        }
-
-       
-
-        .progress-bar {
-
-            width: 100%;
-
-            height: 10px;
-
-            background-color: #e0e0e0;
-
-            border-radius: 5px;
-
-            overflow: hidden;
-
-        }
-
-       
-
-        .progress-fill {
-
-            height: 100%;
-
-            border-radius: 5px;
-
-            background-color: var(--secondary);
-
-        }
-
-       
-
-        .success-stories {
-
-            margin-bottom: 4rem;
-
-        }
-
-       
-
-        .stories-container {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
-            gap: 2rem;
-
-        }
-
-       
-
-        .story-card {
-
-            background-color: var(--white);
-
-            border-radius: 8px;
-
-            overflow: hidden;
-
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-
-        }
-
-       
-
-        .story-image {
-
-            width: 100%;
-
-            height: 200px;
-
-            background-color: #ddd;
-
-            background-size: cover;
-
-            background-position: center;
-
-        }
-
-       
-
-        .story-content {
-
-            padding: 1.5rem;
-
-        }
-
-       
-
-        .story-name {
-
-            font-size: 1.3rem;
-
-            font-weight: bold;
-
-            color: var(--primary);
-
-            margin-bottom: 0.5rem;
-
-        }
-
-       
-
-        .story-business {
-
-            font-size: 1rem;
-
-            color: var(--secondary);
-
-            margin-bottom: 1rem;
-
-        }
-
-       
-
-        .story-text {
-
-            margin-bottom: 1rem;
-
-        }
-
-       
-
-        .story-metrics {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            background-color: var(--primary-light);
-
-            padding: 1rem;
-
-            border-radius: 4px;
-
-            margin-bottom: 1rem;
-
-        }
-
-       
-
-        .story-metric {
-
-            text-align: center;
-
-        }
-
-       
-
-        .story-metric-value {
-
-            font-size: 1.2rem;
-
-            font-weight: bold;
-
-            color: var(--primary);
-
-        }
-
-       
-
-        .story-metric-label {
-
-            font-size: 0.8rem;
-
-        }
-
-       
-
-        .story-quote {
-
-            font-style: italic;
-
-            padding: 1rem;
-
-            background-color: var(--secondary-light);
-
-            border-left: 3px solid var(--secondary);
-
-            border-radius: 4px;
-
-        }
-
-       
-
-        .btn {
-
-            display: inline-block;
-
-            background-color: var(--primary);
-
-            color: var(--white);
-
-            padding: 0.8rem 1.5rem;
-
-            border-radius: 4px;
-
-            text-decoration: none;
-
-            font-weight: bold;
-
-            transition: all 0.3s ease;
-
-        }
-
-       
-
-        .btn:hover {
-
-            background-color: var(--secondary);
-
-            transform: translateY(-3px);
-
-        }
-
-       
-
-        .reports-section {
-
-            background-color: var(--primary-light);
-
-            padding: 3rem 2rem;
-
-            border-radius: 8px;
-
-            margin-bottom: 4rem;
-
-        }
-
-       
-
-        .reports-container {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            justify-content: center;
-
-            gap: 2rem;
-
-            margin-top: 2rem;
-
-        }
-
-       
-
-        .report-card {
-
-            background-color: var(--white);
-
-            border-radius: 8px;
-
-            padding: 1.5rem;
-
-            width: 300px;
-
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-
-            transition: all 0.3s ease;
-
-        }
-
-       
-
-        .report-card:hover {
-
-            transform: translateY(-5px);
-
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-
-        }
-
-       
-
-        .report-icon {
-
-            font-size: 2rem;
-
-            color: var(--primary);
-
-            margin-bottom: 1rem;
-
-            text-align: center;
-
-        }
-
-       
-
-        .report-title {
-
-            font-size: 1.2rem;
-
-            font-weight: bold;
-
-            color: var(--primary);
-
-            margin-bottom: 0.5rem;
-
-            text-align: center;
-
-        }
-
-       
-
-        .report-description {
-
-            font-size: 0.9rem;
-
-            text-align: center;
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .methodology-section {
-
-            margin-bottom: 4rem;
-
-        }
-
-       
-
-        .methodology-container {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
-            gap: 2rem;
-
-        }
-
-       
-
-        .methodology-card {
-
-            background-color: var(--white);
-
-            border-radius: 8px;
-
-            padding: 2rem;
-
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-
-        }
-
-       
-
-        .methodology-icon {
-
-            font-size: 2rem;
-
-            color: var(--secondary);
-
-            margin-bottom: 1rem;
-
-            text-align: center;
-
-        }
-
-       
-
-        .methodology-title {
-
-            font-size: 1.2rem;
-
-            font-weight: bold;
-
-            color: var(--primary);
-
-            margin-bottom: 1rem;
-
-            text-align: center;
-
-        }
-
-       
-
-        .methodology-text {
-
-            font-size: 0.9rem;
-
-            text-align: center;
-
-        }
-
-       
-
-        .cta-section {
-
-            background-color: var(--primary);
-
-            color: var(--white);
-
-            text-align: center;
-
-            padding: 3rem 2rem;
-
-            border-radius: 8px;
-
-            margin-bottom: 4rem;
-
-        }
-
-       
-
-        .cta-section h2 {
-
-            font-size: 2rem;
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .cta-section p {
-
-            font-size: 1.1rem;
-
-            max-width: 800px;
-
-            margin: 0 auto 2rem;
-
-        }
-
-       
-
-        .cta-btn {
-
-            display: inline-block;
-
-            background-color: var(--secondary);
-
-            color: var(--white);
-
-            padding: 0.8rem 2rem;
-
-            border-radius: 4px;
-
-            text-decoration: none;
-
-            font-weight: bold;
-
-            letter-spacing: 1px;
-
-            transition: all 0.3s ease;
-
-        }
-
-       
-
-        .cta-btn:hover {
-
-            background-color: #d2661b;
-
-            transform: scale(1.05);
-
-        }
-
-       
-
-        footer {
-
-            background-color: var(--dark);
-
-            color: var(--white);
-
-            padding: 2rem;
-
-            text-align: center;
-
-        }
-
-       
-
-        .footer-links {
-
-            display: flex;
-
-            justify-content: center;
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .footer-links a {
-
-            color: var(--white);
-
-            margin: 0 1rem;
-
-            text-decoration: none;
-
-        }
-
-       
-
-        .footer-links a:hover {
-
-            color: var(--secondary);
-
-        }
-
-       
-
-        .contact-info {
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .social-icons {
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .social-icons a {
-
-            color: var(--white);
-
-            margin: 0 0.5rem;
-
-            font-size: 1.5rem;
-
-            text-decoration: none;
-
-        }
-
-       
-
-        @media screen and (max-width: 768px) {
-
-            header {
-
-                flex-direction: column;
-
-                padding: 1rem;
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0a5c97',
+                        'primary-light': '#e8f4fc',
+                        secondary: '#e87722',
+                        'secondary-light': '#fdf1e8',
+                        success: '#27ae60',
+                        info: '#3498db',
+                        warning: '#f39c12'
+                    }
+                }
             }
-
-           
-
-            nav ul {
-
-                margin-top: 1rem;
-
-                flex-wrap: wrap;
-
-                justify-content: center;
-
-            }
-
-           
-
-            nav ul li {
-
-                margin: 0.5rem;
-
-            }
-
-           
-
-            .hero h1 {
-
-                font-size: 2rem;
-
-            }
-
-           
-
-            .stat-number {
-
-                font-size: 2rem;
-
-            }
-
-           
-
-            .category-tabs {
-
-                flex-direction: column;
-
-                align-items: center;
-
-            }
-
-           
-
-            .category-tab {
-
-                margin-bottom: 0.5rem;
-
-            }
-
         }
-
-    </style>
-
+    </script>
 </head>
+<body class="bg-gray-100 text-gray-800 leading-relaxed">
+    <!-- Include header -->
+    <div id="header-placeholder"></div>
 
-<body>
-
-    <header>
-
-        <div class="logo">
-
-            <div class="logo-img">↗</div>
-
-            <span>Prograte Capital Ventures</span>
-
-        </div>
-
-        <nav>
-
-            <ul>
-
-                <li><a href="#">Home</a></li>
-
-                <li><a href="#">About</a></li>
-
-                <li><a href="#">Services</a></li>
-
-                <li><a href="#" class="active">Impact</a></li>
-
-                <li><a href="#">Apply</a></li>
-
-                <li><a href="#">Contact</a></li>
-
-            </ul>
-
-        </nav>
-
-    </header>
-
-   
-
-    <section class="hero">
-
-        <h1>Our Impact</h1>
-
-        <p>Transforming the financial landscape for women entrepreneurs in Uganda through measurable, sustainable impact.</p>
-
-    </section>
-
-   
-
-    <div class="container">
-
-        <section class="impact-overview">
-
-            <div class="section-title">
-
-                <h2>Creating Measurable Change</h2>
-
-                <p>At Prograte Capital Ventures, we measure our success not only by financial returns but by the lasting difference we make in the lives of women entrepreneurs and their communities. Through our innovative dividend-based micro-investment model, we're building a more inclusive financial ecosystem in Uganda's informal sector.</p>
-
+    <!-- Main content -->
+    <main class="pt-24">
+        <!-- Hero Section -->
+        <section class="bg-primary-light py-20 px-8">
+            <div class="max-w-6xl mx-auto">
+                <h1 class="text-4xl font-bold text-primary mb-6">Our Impact</h1>
+                <p class="text-xl text-gray-700 max-w-3xl">Transforming lives and businesses across Uganda through innovative micro-investments and comprehensive support.</p>
             </div>
-
-           
-
-            <div class="stats-container">
-
-                <div class="stat-card">
-
-                    <div class="stat-icon">👩‍💼</div>
-
-                    <div class="stat-number">400+</div>
-
-                    <div class="stat-label">Businesses Supported</div>
-
-                </div>
-
-               
-
-                <div class="stat-card">
-
-                    <div class="stat-icon">💰</div>
-
-                    <div class="stat-number">$68,000</div>
-
-                    <div class="stat-label">Capital Deployed</div>
-
-                </div>
-
-               
-
-                <div class="stat-card">
-
-                    <div class="stat-icon">📈</div>
-
-                    <div class="stat-number">5-10%</div>
-
-                    <div class="stat-label">Monthly Returns</div>
-
-                </div>
-
-               
-
-                <div class="stat-card">
-
-                    <div class="stat-icon">🏆</div>
-
-                    <div class="stat-number">26%</div>
-
-                    <div class="stat-label">Financial Independence Rate</div>
-
-                </div>
-
-            </div>
-
         </section>
 
-       
-
-        <section class="success-metrics">
-
-            <div class="impact-dashboard">
-
-                <div class="dashboard-title">Impact Dashboard</div>
-
-                <div class="dashboard-grid">
-
-                    <div class="metric-card">
-
-                        <div class="metric-header">
-
-                            <div class="metric-icon">👩‍💼</div>
-
-                            <div class="metric-title">Gender Inclusion</div>
-
-                        </div>
-
-                        <div class="metric-value">81%</div>
-
-                        <div class="metric-description">Of our portfolio businesses are women-owned, addressing the systemic exclusion of women entrepreneurs from traditional financing.</div>
-
+        <!-- Impact Stats -->
+        <section class="py-16 px-8 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">400+</div>
+                        <p class="text-gray-600">Women Entrepreneurs Supported</p>
                     </div>
-
-                   
-
-                    <div class="metric-card">
-
-                        <div class="metric-header">
-
-                            <div class="metric-icon">💪</div>
-
-                            <div class="metric-title">Active Engagement</div>
-
-                        </div>
-
-                        <div class="metric-value">74%</div>
-
-                        <div class="metric-description">Of supported businesses remain actively engaged in our program, demonstrating the sustainability of our model.</div>
-
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">$2M+</div>
+                        <p class="text-gray-600">Total Investment Deployed</p>
                     </div>
-
-                   
-
-                    <div class="metric-card">
-
-                        <div class="metric-header">
-
-                            <div class="metric-icon">🌱</div>
-
-                            <div class="metric-title">Business Growth</div>
-
-                        </div>
-
-                        <div class="metric-value">20%</div>
-
-                        <div class="metric-description">Average monthly revenue growth for businesses in our portfolio, enabling sustainable expansion.</div>
-
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">85%</div>
+                        <p class="text-gray-600">Business Growth Rate</p>
                     </div>
-
-                   
-
-                    <div class="metric-card">
-
-                        <div class="metric-header">
-
-                            <div class="metric-icon">💼</div>
-
-                            <div class="metric-title">Job Creation</div>
-
-                        </div>
-
-                        <div class="metric-value">2+</div>
-
-                        <div class="metric-description">New jobs created per business on average, contributing to community employment opportunities.</div>
-
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-primary mb-2">1200+</div>
+                        <p class="text-gray-600">Jobs Created</p>
                     </div>
-
-                   
-
-                    <div class="metric-card">
-
-                        <div class="metric-header">
-
-                            <div class="metric-icon">🏠</div>
-
-                            <div class="metric-title">Household Impact</div>
-
-                        </div>
-
-                        <div class="metric-value">30%</div>
-
-                        <div class="metric-description">Average improvement in household income for entrepreneurs in our program.</div>
-
-                    </div>
-
-                   
-
-                    <div class="metric-card">
-
-                        <div class="metric-header">
-
-                            <div class="metric-icon">📊</div>
-
-                            <div class="metric-title">Financial Literacy</div>
-
-                        </div>
-
-                        <div class="metric-value">80%</div>
-
-                        <div class="metric-description">Pass rate on our financial literacy assessments, demonstrating skill development.</div>
-
-                    </div>
-
                 </div>
-
             </div>
-
         </section>
 
-       
+        <!-- Success Stories -->
+        <section class="py-20 px-8">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold text-primary mb-12 text-center">Success Stories</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Story 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gray-200"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-2">Sarah's Market Revolution</h3>
+                            <p class="text-gray-600 mb-4">From a small vegetable stand to a thriving market business employing 5 people, Sarah's story exemplifies the power of strategic investment and mentorship.</p>
+                            <div class="flex items-center space-x-4">
+                                <div class="text-success font-semibold">Revenue Growth: 300%</div>
+                                <div class="text-info font-semibold">Jobs Created: 5</div>
+                            </div>
+                        </div>
+                    </div>
 
-        <section class="impact-categories">
+                    <!-- Story 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gray-200"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-2">Grace's Textile Empire</h3>
+                            <p class="text-gray-600 mb-4">Starting with a single sewing machine, Grace built a textile business that now supplies to major retailers in Kampala.</p>
+                            <div class="flex items-center space-x-4">
+                                <div class="text-success font-semibold">Revenue Growth: 450%</div>
+                                <div class="text-info font-semibold">Jobs Created: 12</div>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="section-title">
-
-                <h2>Impact Dimensions</h2>
-
-                <p>Our impact extends across multiple dimensions, creating a holistic transformation for entrepreneurs and their communities.</p>
-
+                    <!-- Story 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gray-200"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-2">Janet's Food Processing</h3>
+                            <p class="text-gray-600 mb-4">Janet transformed her home-based snack production into a certified food processing facility serving multiple districts.</p>
+                            <div class="flex items-center space-x-4">
+                                <div class="text-success font-semibold">Revenue Growth: 250%</div>
+                                <div class="text-info font-semibold">Jobs Created: 8</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-           
-
-            <div class="category-tabs">
-
-                <div class="category-tab active">Economic Empowerment</div>
-
-                <div class="category-tab">Financial Inclusion</div>
-
-                <div class="category-tab">Community Development</div>
-
-            </div>
-
-           
-
-            <div class="category-content active">
-
-                <div class="progress-container">
-
-                    <div class="progress-label">
-
-                        <span class="progress-title">Business Revenue Growth</span>
-
-                        <span class="progress-value">Average 20% monthly increase</span>
-
-                    </div>
-
-                    <div class="progress-bar">
-
-                        <div class="progress-fill" style="width: 80%;"></div>
-
-                    </div>
-
-                </div>
-
-               
-
-                <div class="progress-container">
-
-                    <div class="progress-label">
-
-                        <span class="progress-title">Job Creation</span>
-
-                        <span class="progress-value">800+ new jobs</span>
-
-                    </div>
-
-                    <div class="progress-bar">
-
-                        <div class="progress-fill" style="width: 65%;"></div>
-
-                    </div>
-
-                </div>
-
-               
-
-                <div class="progress-container">
-
-                    <div class="progress-label">
-
-                        <span class="progress-title">Household Income Improvement</span>
-
-                        <span class="progress-value">30% average increase</span>
-
-                    </div>
-
-                    <div class="progress-bar">
-
-                        <div class="progress-fill" style="width: 75%;"></div>
-
-                    </div>
-
-                </div>
-
-               
-
-                <div class="progress-container">
-
-                    <div class="progress-label">
-
-                        <span class="progress-title">Business Asset Growth</span>
-
-                        <span class="progress-value">45% average increase</span>
-
-                    </div>
-
-                    <div class="progress-bar">
-
-                        <div class="progress-fill" style="width: 90%;"></div>
-
-                    </div>
-
-                </div>
-
-               
-
-                <p style="margin-top: 2rem;">Our economic empowerment impact focuses on tangible business growth metrics that demonstrate how our micro-investments and business support services enable entrepreneurs to build sustainable, profitable businesses. By tracking revenue growth, job creation, household income improvements, and business asset growth, we can measure the direct economic impact of our program on both individual entrepreneurs and their communities.</p>
-
-            </div>
-
-           
-
-            <div class="category-content">
-
-                <div class="progress-container">
-
-                    <div class="progress-label">
-
-                        <span class="progress-title">First-time Access to Formal Investment</span>
-
-                        <span class="progress-value">85% of portfolio</span>
-
-                    </div>
-
-                    <div class="progress-bar">
-
-                        <div class="progress-fill" style="width: 85%;"></div>
-
-                    </div>
-
-                </div>
-
-               
-
-                <div class="progress-container">
-
-                    <div class="progress-label">
-
-                        <span class="progress-title">Financial Literacy Improvement</span>
-
-                        <span class="progress-value">73% score increase</span>
-
-                    </div>
-
-                    <div class="progress-bar">
-
-                        <div class="progress-fill" style="width: 73%;"></div>
-
-                    </div>
-
-                </div>
-
-               
-
-                <div class="progress-container">
-
-                    <div class="progress-label">
-
-                        <span class="progress-title">Record-Keeping Implementation</span>
-
-                        <span class="progress-value">92% adoption rate</span>
-
-                    </div>
-
-                    <div class="progress-bar">
-
-                        <div class="progress-fill" style="width: 92%;"></div>
-
-                    </div>
-
-                </div>
-
-               
-
-                <div class="progress-container">
-
-                    <div class="progress-label">
-
-                        <span class="progress-title">Path to Formalization</span>
-
-                        <span class="progress-value">26% achieved</span>
-
-                    </div>
-
-                    <div class="progress-bar">
-
-                        <div class="progress-fill" style="width: 26%;"></div>
-
-                    </div>
-
-                </div>
-
-               
-
-                <p style="margin-top: 2rem;">Our financial inclusion impact addresses the systematic exclusion of women entrepreneurs from traditional financial systems. By providing first-time access to formal investment, improving financial literacy, implementing proper record-keeping practices, and creating pathways to business formalization, we're building the foundation for long-term financial inclusion that extends beyond our direct investment.</p>
-
-            </div>
-
-           
-
-            <div class="category-content">
-
-                <div class="progress-container">
-
-                    <div class="progress-label">
-
-                        <span class="progress-title">Local Economic Multiplier</span>
-
-                        <span class="progress-value">2.4x impact</span>
-
-                    </div>
-
-                    <div class="progress-bar">
-
-                        <div class="progress-fill" style="width: 70%;"></div>
-
-                    </div>
-
-                </div>
-
-               
-
-                <div class="progress-container">
-
-                    <div class="progress-label">
-
-                        <span class="progress-title">Business-to-Business Transactions</span>
-
-                        <span class="progress-value">35% increase</span>
-
-                    </div>
-
-                    <div class="progress-bar">
-
-                        <div class="progress-fill" style="width: 65%;"></div>
-
-                    </div>
-
-                </div>
-
-               
-
-                <div class="progress-container">
-
-                    <div class="progress-label">
-
-                        <span class="progress-title">Supply Chain Strengthening</span>
-
-                        <span class="progress-value">28 local suppliers engaged</span>
-
-                    </div>
-
-                    <div class="progress-bar">
-
-                        <div class="progress-fill" style="width: 56%;"></div>
-
-                    </div>
-
-                </div>
-
-               
-
-                <div class="progress-container">
-
-                    <div class="progress-label">
-
-                        <span class="progress-title">Community Reinvestment</span>
-
-                        <span class="progress-value">42% of profits</span>
-
-                    </div>
-
-                    <div class="progress-bar">
-
-                        <div class="progress-fill" style="width: 84%;"></div>
-
-                    </div>
-
-                </div>
-
-               
-
-                <p style="margin-top: 2rem;">Our community development impact examines how our investments create ripple effects throughout local economies. By measuring the local economic multiplier effect, tracking business-to-business transactions, strengthening local supply chains, and encouraging community reinvestment, we can demonstrate how our support for individual entrepreneurs contributes to broader community economic resilience and growth.</p>
-
-            </div>
-
         </section>
 
-       
-
-        <section class="success-stories">
-
-            <div class="section-title">
-
-                <h2>Success Stories</h2>
-
-                <p>Meet some of the remarkable entrepreneurs who have transformed their businesses through our investment and support.</p>
-
-            </div>
-
-           
-
-            <div class="stories-container">
-
-                <div class="story-card">
-
-                    <div class="story-image" style="background-image: url('/api/placeholder/400/200');"></div>
-
-                    <div class="story-content">
-
-                        <div class="story-name">Grace Namukasa</div>
-
-                        <div class="story-business">Market Vegetables & Fruits, Jinja</div>
-
-                        <div class="story-text">Grace expanded her market stall from selling just three types of vegetables to a comprehensive produce stand with over 15 different fruits and vegetables. With her first investment of $150, she was able to purchase a refrigeration unit that reduced spoilage and increased her inventory.</div>
-
-                       
-
-                        <div class="story-metrics">
-
-                            <div class="story-metric">
-
-                                <div class="story-metric-value">320%</div>
-
-                                <div class="story-metric-label">Revenue Growth</div>
-
-                            </div>
-
-                            <div class="story-metric">
-
-                                <div class="story-metric-value">3</div>
-
-                                <div class="story-metric-label">Jobs Created</div>
-
-                            </div>
-
-                            <div class="story-metric">
-
-                                <div class="story-metric-value">18 mo</div>
-
-                                <div class="story-metric-label">With Prograte</div>
-
-                            </div>
-
-                        </div>
-
-                       
-
-                        <div class="story-quote">"Before Prograte, I couldn't keep my produce fresh, and I lost money every day. Now I have a real business that supports my family and employs three people from my community. My children are in school, and I'm planning to open a second location."</div>
-
+        <!-- Impact Areas -->
+        <section class="py-20 px-8 bg-primary-light">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold text-primary mb-12 text-center">Areas of Impact</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-primary mb-4">Economic Empowerment</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-success mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Average income increase of 150% for supported entrepreneurs</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-success mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Over 1200 new jobs created in local communities</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-success mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>85% of businesses report improved financial stability</span>
+                            </li>
+                        </ul>
                     </div>
-
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-primary mb-4">Social Impact</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-success mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Improved education access for 2000+ children of entrepreneurs</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-success mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Enhanced healthcare access for 1500+ families</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-success mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Strengthened community leadership with 60% of entrepreneurs in community roles</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+            </div>
+        </section>
 
-               
+        <!-- CTA Section -->
+        <section class="bg-primary text-white py-20 px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-6">Be Part of Our Impact Story</h2>
+                <p class="text-xl mb-8">Join our community of successful women entrepreneurs and transform your business with our support.</p>
+                <a href="#" class="inline-block bg-secondary text-white px-10 py-4 rounded-full font-bold tracking-wide hover:bg-opacity-90 transform hover:scale-105 transition-all">Apply Now</a>
+            </div>
+        </section>
+    </main>
 
-                <div class="story-card">
+    <!-- Include footer -->
+    <div id="footer-placeholder"></div>
 
-                    <div class="story-image" style="background-image: url('/api/placeholder/400/200');"></div>
-
-                    <div class="story-content
+    <!-- Component Loading Script -->
+    <script>
+        // Load header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+        
+        // Load footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

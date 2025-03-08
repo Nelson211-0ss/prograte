@@ -1,912 +1,110 @@
-
-Jdiobe, Muwanika
-9:45 AM (7 hours ago)
-to me
-
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Our Services | Prograte Capital Ventures</title>
-
-    <style>
-
-        :root {
-
-            --primary: #0a5c97;
-
-            --secondary: #e87722;
-
-            --light: #f5f5f5;
-
-            --dark: #333333;
-
-            --white: #ffffff;
-
-        }
-
-       
-
-        * {
-
-            margin: 0;
-
-            padding: 0;
-
-            box-sizing: border-box;
-
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-        }
-
-       
-
-        body {
-
-            background-color: var(--light);
-
-            color: var(--dark);
-
-            line-height: 1.6;
-
-        }
-
-       
-
-        header {
-
-            background-color: var(--primary);
-
-            color: var(--white);
-
-            padding: 1rem 2rem;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-
-        }
-
-       
-
-        .logo {
-
-            font-size: 1.5rem;
-
-            font-weight: bold;
-
-            display: flex;
-
-            align-items: center;
-
-        }
-
-       
-
-        .logo-img {
-
-            width: 40px;
-
-            height: 40px;
-
-            margin-right: 10px;
-
-            background-color: var(--white);
-
-            border-radius: 50%;
-
-        }
-
-       
-
-        nav ul {
-
-            display: flex;
-
-            list-style: none;
-
-        }
-
-       
-
-        nav ul li {
-
-            margin-left: 1.5rem;
-
-        }
-
-       
-
-        nav ul li a {
-
-            color: var(--white);
-
-            text-decoration: none;
-
-            font-weight: 500;
-
-            padding: 0.5rem;
-
-            transition: all 0.3s ease;
-
-        }
-
-       
-
-        nav ul li a:hover {
-
-            color: var(--secondary);
-
-        }
-
-       
-
-        .active {
-
-            border-bottom: 3px solid var(--secondary);
-
-        }
-
-       
-
-        .hero {
-
-            background-image: linear-gradient(rgba(10, 92, 151, 0.8), rgba(10, 92, 151, 0.8)), url('/api/placeholder/1200/400');
-
-            background-size: cover;
-
-            background-position: center;
-
-            color: var(--white);
-
-            text-align: center;
-
-            padding: 4rem 2rem;
-
-        }
-
-       
-
-        .hero h1 {
-
-            font-size: 2.5rem;
-
-            margin-bottom: 1rem;
-
-        }
-
-       
-
-        .hero p {
-
-            font-size: 1.2rem;
-
-            max-width: 800px;
-
-            margin: 0 auto;
-
-        }
-
-       
-
-        .services-intro {
-
-            max-width: 1200px;
-
-            margin: 3rem auto;
-
-            padding: 0 2rem;
-
-            text-align: center;
-
-        }
-
-       
-
-        .services-intro h2 {
-
-            font-size: 2rem;
-
-            color: var(--primary);
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .services-intro p {
-
-            font-size: 1.1rem;
-
-            max-width: 800px;
-
-            margin: 0 auto 2rem;
-
-        }
-
-       
-
-        .services-container {
-
-            max-width: 1200px;
-
-            margin: 0 auto 4rem;
-
-            padding: 0 2rem;
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-
-            gap: 2.5rem;
-
-        }
-
-       
-
-        .service-card {
-
-            background-color: var(--white);
-
-            border-radius: 8px;
-
-            overflow: hidden;
-
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-        }
-
-       
-
-        .service-card:hover {
-
-            transform: translateY(-10px);
-
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-
-        }
-
-       
-
-        .service-header {
-
-            background-color: var(--primary);
-
-            color: var(--white);
-
-            padding: 1.5rem;
-
-            text-align: center;
-
-        }
-
-       
-
-        .service-header h3 {
-
-            font-size: 1.5rem;
-
-            margin-bottom: 0.5rem;
-
-        }
-
-       
-
-        .service-icon {
-
-            font-size: 2.5rem;
-
-            margin-bottom: 1rem;
-
-            color: var(--secondary);
-
-        }
-
-       
-
-        .service-content {
-
-            padding: 1.5rem;
-
-        }
-
-       
-
-        .service-benefit {
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .service-benefit h4 {
-
-            font-size: 1.2rem;
-
-            color: var(--primary);
-
-            margin-bottom: 0.5rem;
-
-        }
-
-       
-
-        .testimonial {
-
-            background-color: #f0f7fc;
-
-            padding: 1.5rem;
-
-            border-radius: 6px;
-
-            border-left: 4px solid var(--secondary);
-
-            font-style: italic;
-
-        }
-
-       
-
-        .testimonial-author {
-
-            font-style: normal;
-
-            font-weight: bold;
-
-            margin-top: 0.8rem;
-
-            text-align: right;
-
-            color: var(--primary);
-
-        }
-
-       
-
-        .cta-section {
-
-            background-color: var(--primary);
-
-            color: var(--white);
-
-            text-align: center;
-
-            padding: 3rem 2rem;
-
-            margin-bottom: 3rem;
-
-        }
-
-       
-
-        .cta-section h2 {
-
-            font-size: 2rem;
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .cta-section p {
-
-            font-size: 1.1rem;
-
-            max-width: 800px;
-
-            margin: 0 auto 2rem;
-
-        }
-
-       
-
-        .cta-btn {
-
-            display: inline-block;
-
-            background-color: var(--secondary);
-
-            color: var(--white);
-
-            padding: 0.8rem 2rem;
-
-            border-radius: 4px;
-
-            text-decoration: none;
-
-            font-weight: bold;
-
-            letter-spacing: 1px;
-
-            transition: all 0.3s ease;
-
-        }
-
-       
-
-        .cta-btn:hover {
-
-            background-color: #d2661b;
-
-            transform: scale(1.05);
-
-        }
-
-       
-
-        footer {
-
-            background-color: var(--dark);
-
-            color: var(--white);
-
-            padding: 2rem;
-
-            text-align: center;
-
-        }
-
-       
-
-        .footer-links {
-
-            display: flex;
-
-            justify-content: center;
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .footer-links a {
-
-            color: var(--white);
-
-            margin: 0 1rem;
-
-            text-decoration: none;
-
-        }
-
-       
-
-        .footer-links a:hover {
-
-            color: var(--secondary);
-
-        }
-
-       
-
-        .contact-info {
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .social-icons {
-
-            margin-bottom: 1.5rem;
-
-        }
-
-       
-
-        .social-icons a {
-
-            color: var(--white);
-
-            margin: 0 0.5rem;
-
-            font-size: 1.5rem;
-
-            text-decoration: none;
-
-        }
-
-       
-
-        @media screen and (max-width: 768px) {
-
-            .services-container {
-
-                grid-template-columns: 1fr;
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0a5c97',
+                        'primary-light': '#e8f4fc',
+                        secondary: '#e87722',
+                        'secondary-light': '#fdf1e8',
+                    }
+                }
             }
-
-           
-
-            header {
-
-                flex-direction: column;
-
-                padding: 1rem;
-
-            }
-
-           
-
-            nav ul {
-
-                margin-top: 1rem;
-
-                flex-wrap: wrap;
-
-                justify-content: center;
-
-            }
-
-           
-
-            nav ul li {
-
-                margin: 0.5rem;
-
-            }
-
-           
-
-            .hero h1 {
-
-                font-size: 2rem;
-
-            }
-
         }
-
-    </style>
-
+    </script>
 </head>
+<body class="bg-gray-100 text-gray-800 leading-relaxed">
+    <!-- Include header -->
+    <div id="header-placeholder"></div>
 
-<body>
-
-    <header>
-
-        <div class="logo">
-
-            <div class="logo-img">↗</div>
-
-            <span>Prograte Capital Ventures</span>
-
-        </div>
-
-        <nav>
-
-            <ul>
-
-                <li><a href="#">Home</a></li>
-
-                <li><a href="#">About</a></li>
-
-                <li><a href="#" class="active">Services</a></li>
-
-                <li><a href="#">Impact</a></li>
-
-                <li><a href="#">Apply</a></li>
-
-                <li><a href="#">Contact</a></li>
-
-            </ul>
-
-        </nav>
-
-    </header>
-
-   
-
-    <section class="hero">
-
-        <h1>Our Services</h1>
-
-        <p>Empowering women entrepreneurs in Uganda's informal sector through innovative micro-investments and comprehensive business support.</p>
-
-    </section>
-
-   
-
-    <section class="services-intro">
-
-        <h2>How We Support Your Business</h2>
-
-        <p>Prograte Capital Ventures offers a unique combination of flexible financial investment and targeted business support services designed specifically for women entrepreneurs in Uganda's informal sector. Our holistic approach helps you grow your business sustainably while achieving financial independence.</p>
-
-    </section>
-
-   
-
-    <div class="services-container">
-
-        <!-- Service 1 -->
-
-        <div class="service-card">
-
-            <div class="service-header">
-
-                <div class="service-icon">💰</div>
-
-                <h3>Dividend-Based Micro-Investments</h3>
-
+    <!-- Main content -->
+    <main class="pt-24">
+        <!-- Hero Section -->
+        <section class="bg-primary-light py-20 px-8">
+            <div class="max-w-6xl mx-auto">
+                <h1 class="text-4xl font-bold text-primary mb-6">Our Services</h1>
+                <p class="text-xl text-gray-700 max-w-3xl">We provide comprehensive financial and business support services tailored to empower women entrepreneurs in Uganda's informal sector.</p>
             </div>
+        </section>
 
-            <div class="service-content">
-
-                <div class="service-benefit">
-
-                    <h4>How It Benefits You</h4>
-
-                    <p>Access capital without the burden of traditional loans or collateral requirements. Our flexible dividend model aligns with your business cash flow, allowing you to grow at your own pace while maintaining full ownership of your business.</p>
-
+        <!-- Services Grid -->
+        <section class="py-20 px-8">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Micro-Investment Service -->
+                <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/>
+                            <path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Micro-Investments</h3>
+                    <p class="text-gray-600 mb-4">Flexible dividend-based investments tailored to your business needs, with amounts ranging from $500 to $5,000.</p>
+                    <a href="#" class="text-secondary font-semibold hover:text-primary transition-colors">Learn More →</a>
                 </div>
 
-                <div class="testimonial">
-
-                    <p>"Before Prograte, I was rejected by three banks because I had no collateral. With their $200 investment, I expanded my vegetable stall and now serve twice as many customers. The dividend payments work perfectly with my daily sales cycle."</p>
-
-                    <p class="testimonial-author">— Sarah N., Produce Vendor, Jinja</p>
-
+                <!-- Business Support -->
+                <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                            <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Business Support</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive business mentoring, financial literacy training, and operational guidance to help your business thrive.</p>
+                    <a href="#" class="text-secondary font-semibold hover:text-primary transition-colors">Learn More →</a>
                 </div>
 
-            </div>
-
-        </div>
-
-       
-
-        <!-- Service 2 -->
-
-        <div class="service-card">
-
-            <div class="service-header">
-
-                <div class="service-icon">🚀</div>
-
-                <h3>Business Development Mentorship</h3>
-
-            </div>
-
-            <div class="service-content">
-
-                <div class="service-benefit">
-
-                    <h4>How It Benefits You</h4>
-
-                    <p>Receive personalized guidance from experienced business advisors who understand the challenges of Uganda's informal sector. Our mentorship helps you identify growth opportunities, optimize operations, and implement strategies that increase profitability.</p>
-
+                <!-- Financial Training -->
+                <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Financial Training</h3>
+                    <p class="text-gray-600 mb-4">Expert-led workshops and training sessions on financial management, business planning, and growth strategies.</p>
+                    <a href="#" class="text-secondary font-semibold hover:text-primary transition-colors">Learn More →</a>
                 </div>
-
-                <div class="testimonial">
-
-                    <p>"The mentorship changed everything for me. My mentor helped me reorganize my shop layout and improve my customer service. My sales increased by 35% in just two months!"</p>
-
-                    <p class="testimonial-author">— Grace T., Retail Shop Owner, Matugga-Kampala</p>
-
-                </div>
-
             </div>
+        </section>
 
-        </div>
-
-       
-
-        <!-- Service 3 -->
-
-        <div class="service-card">
-
-            <div class="service-header">
-
-                <div class="service-icon">📊</div>
-
-                <h3>Financial Literacy Training</h3>
-
+        <!-- CTA Section -->
+        <section class="bg-primary text-white py-20 px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-6">Ready to Grow Your Business?</h2>
+                <p class="text-xl mb-8">Join hundreds of successful women entrepreneurs who have transformed their businesses with our support.</p>
+                <a href="#" class="inline-block bg-secondary text-white px-10 py-4 rounded-full font-bold tracking-wide hover:bg-opacity-90 transform hover:scale-105 transition-all">Apply Now</a>
             </div>
-
-            <div class="service-content">
-
-                <div class="service-benefit">
-
-                    <h4>How It Benefits You</h4>
-
-                    <p>Gain essential skills in managing your business finances, from basic record-keeping to strategic planning. Our practical training helps you make informed decisions, track your progress, and build a foundation for sustainable growth.</p>
-
-                </div>
-
-                <div class="testimonial">
-
-                    <p>"I used to keep all my business money and personal money together and never knew if I was making a profit. The financial training taught me how to separate my accounts and track my expenses. Now I know exactly how my business is performing every week."</p>
-
-                    <p class="testimonial-author">— Esther K., Tailor, Busia</p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-       
-
-        <!-- Service 4 -->
-
-        <div class="service-card">
-
-            <div class="service-header">
-
-                <div class="service-icon">🤝</div>
-
-                <h3>Networking Opportunities</h3>
-
-            </div>
-
-            <div class="service-content">
-
-                <div class="service-benefit">
-
-                    <h4>How It Benefits You</h4>
-
-                    <p>Connect with fellow entrepreneurs, potential customers, and suppliers through our organized networking events. Build valuable relationships that can lead to new opportunities, collaborations, and knowledge sharing.</p>
-
-                </div>
-
-                <div class="testimonial">
-
-                    <p>"Through Prograte's networking events, I met three other business owners who now buy my products wholesale. My production has tripled, and I've hired two assistants to keep up with demand!"</p>
-
-                    <p class="testimonial-author">— Janet M., Soap Manufacturer, Kampala</p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-       
-
-        <!-- Service 5 -->
-
-        <div class="service-card">
-
-            <div class="service-header">
-
-                <div class="service-icon">📝</div>
-
-                <h3>Formalization Support</h3>
-
-            </div>
-
-            <div class="service-content">
-
-                <div class="service-benefit">
-
-                    <h4>How It Benefits You</h4>
-
-                    <p>Navigate the path toward business formalization with expert guidance. We help you understand the benefits of formalization, prepare necessary documentation, and transition at a pace that makes sense for your business growth.</p>
-
-                </div>
-
-                <div class="testimonial">
-
-                    <p>"I always thought formalization was too complicated and expensive. Prograte helped me register my business step by step, and now I can access larger markets and supply to formal businesses. My revenue has grown by 50% since becoming formal."</p>
-
-                    <p class="testimonial-author">— Rebecca L., Food Processor, Jinja</p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-       
-
-        <!-- Service 6 -->
-
-        <div class="service-card">
-
-            <div class="service-header">
-
-                <div class="service-icon">📈</div>
-
-                <h3>Performance Monitoring</h3>
-
-            </div>
-
-            <div class="service-content">
-
-                <div class="service-benefit">
-
-                    <h4>How It Benefits You</h4>
-
-                    <p>Stay on track with regular business health checks and performance reviews. Our monitoring helps identify challenges early, celebrate milestones, and continuously adapt your strategy for optimal results.</p>
-
-                </div>
-
-                <div class="testimonial">
-
-                    <p>"The regular check-ins keep me accountable and motivated. When sales were slowing, my Prograte advisor noticed the trend immediately and helped me adjust my product mix. Within weeks, we turned the situation around."</p>
-
-                    <p class="testimonial-author">— Irene B., Cosmetics Retailer, Matugga</p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-   
-
-    <section class="cta-section">
-
-        <h2>Ready to Grow Your Business?</h2>
-
-        <p>Join over 400 women entrepreneurs who have transformed their businesses with Prograte Capital Ventures. Our team is ready to help you achieve your business goals through our innovative dividend-based investment model and comprehensive support services.</p>
-
-        <a href="#" class="cta-btn">APPLY NOW</a>
-
-    </section>
-
-   
-
-    <footer>
-
-        <div class="footer-links">
-
-            <a href="#">Home</a>
-
-            <a href="#">About</a>
-
-            <a href="#">Services</a>
-
-            <a href="#">Impact</a>
-
-            <a href="#">Apply</a>
-
-            <a href="#">Contact</a>
-
-        </div>
-
-        <div class="contact-info">
-
-            <p>Email: info@progratecapital.com | Phone: +256 123 456 789</p>
-
-            <p>Branches: Jinja, Matugga-Kampala, and Busia</p>
-
-        </div>
-
-        <div class="social-icons">
-
-            <a href="#">FB</a>
-
-            <a href="#">IG</a>
-
-            <a href="#">TW</a>
-
-            <a href="#">LI</a>
-
-        </div>
-
-        <p>&copy; 2025 Prograte Capital Ventures Ltd. All Rights Reserved.</p>
-
-    </footer>
-
+        </section>
+    </main>
+
+    <!-- Include footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Component Loading Script -->
+    <script>
+        // Load header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+        
+        // Load footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
 </body>
-
 </html>

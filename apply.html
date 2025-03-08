@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply - Prograte Capital Ventures</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0a5c97',
+                        'primary-light': '#e8f4fc',
+                        secondary: '#e87722',
+                        'secondary-light': '#fdf1e8',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-800 leading-relaxed">
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <main class="pt-24 pb-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-primary mb-4">Apply for Investment</h1>
+                <p class="text-lg text-gray-600">Join our community of successful women entrepreneurs in Uganda</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <form id="applicationForm" class="space-y-6">
+                    <!-- Personal Information -->
+                    <div class="space-y-4">
+                        <h2 class="text-2xl font-semibold text-primary">Personal Information</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                                <input type="text" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+                                <input type="tel" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                <input type="email" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Location/District *</label>
+                                <input type="text" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Business Information -->
+                    <div class="space-y-4">
+                        <h2 class="text-2xl font-semibold text-primary">Business Information</h2>
+                        <div class="grid grid-cols-1 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Business Name *</label>
+                                <input type="text" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Type of Business *</label>
+                                <select required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+                                    <option value="">Select business type</option>
+                                    <option value="retail">Retail</option>
+                                    <option value="agriculture">Agriculture</option>
+                                    <option value="manufacturing">Manufacturing</option>
+                                    <option value="services">Services</option>
+                                    <option value="food">Food & Beverage</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Years in Business *</label>
+                                <select required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+                                    <option value="">Select years in business</option>
+                                    <option value="<1">Less than 1 year</option>
+                                    <option value="1-2">1-2 years</option>
+                                    <option value="2-5">2-5 years</option>
+                                    <option value="5+">More than 5 years</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Monthly Revenue (UGX) *</label>
+                                <select required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+                                    <option value="">Select monthly revenue range</option>
+                                    <option value="<500k">Less than 500,000</option>
+                                    <option value="500k-1m">500,000 - 1,000,000</option>
+                                    <option value="1m-5m">1,000,000 - 5,000,000</option>
+                                    <option value="5m+">More than 5,000,000</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Tell us about your business and how you would use the investment *</label>
+                                <textarea required rows="4" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4 pt-4">
+                        <button type="submit" class="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-md transition-colors">
+                            Submit Application
+                        </button>
+                        <button type="reset" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-3 px-6 rounded-md transition-colors">
+                            Clear Form
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Load header and footer
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                // Re-run the header scripts
+                const headerScript = document.getElementById('header-placeholder').querySelector('script');
+                if (headerScript) eval(headerScript.innerHTML);
+            });
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+
+        // Form submission handling
+        document.getElementById('applicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to your backend
+            alert('Thank you for your application! We will review it and contact you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html> 
