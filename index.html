@@ -1,0 +1,1966 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prograte Capital Ventures | Empowering Uganda's Women Entrepreneurs</title>
+
+    <style>
+
+        :root {
+
+            --primary: #0a5c97;
+
+            --primary-light: #e8f4fc;
+
+            --secondary: #e87722;
+
+            --secondary-light: #fdf1e8;
+
+            --light: #f5f5f5;
+
+            --dark: #333333;
+
+            --white: #ffffff;
+
+            --success: #27ae60;
+
+            --info: #3498db;
+
+            --warning: #f39c12;
+
+        }
+
+       
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+       
+
+        body {
+
+            background-color: var(--light);
+
+            color: var(--dark);
+
+            line-height: 1.6;
+
+        }
+
+       
+
+        header {
+
+            background-color: var(--primary);
+
+            color: var(--white);
+
+            padding: 1rem 2rem;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+            position: fixed;
+
+            width: 100%;
+
+            z-index: 1000;
+
+        }
+
+       
+
+        .logo {
+
+            font-size: 1.5rem;
+
+            font-weight: bold;
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+       
+
+        .logo-img {
+
+            width: 40px;
+
+            height: 40px;
+
+            margin-right: 10px;
+
+            background-color: var(--white);
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 24px;
+
+        }
+
+       
+
+        nav ul {
+
+            display: flex;
+
+            list-style: none;
+
+        }
+
+       
+
+        nav ul li {
+
+            margin-left: 1.5rem;
+
+        }
+
+       
+
+        nav ul li a {
+
+            color: var(--white);
+
+            text-decoration: none;
+
+            font-weight: 500;
+
+            padding: 0.5rem;
+
+            transition: all 0.3s ease;
+
+        }
+
+       
+
+        nav ul li a:hover {
+
+            color: var(--secondary);
+
+        }
+
+       
+
+        .active {
+
+            border-bottom: 3px solid var(--secondary);
+
+        }
+
+       
+
+        .hero {
+
+            background-image: linear-gradient(rgba(10, 92, 151, 0.7), rgba(10, 92, 151, 0.7)), url('/api/placeholder/1920/1080');
+
+            background-size: cover;
+
+            background-position: center;
+
+            color: var(--white);
+
+            text-align: center;
+
+            padding: 12rem 2rem 8rem;
+
+            position: relative;
+
+        }
+
+       
+
+        .hero-content {
+
+            max-width: 900px;
+
+            margin: 0 auto;
+
+        }
+
+       
+
+        .hero h1 {
+
+            font-size: 3rem;
+
+            margin-bottom: 1.5rem;
+
+            line-height: 1.2;
+
+        }
+
+       
+
+        .hero p {
+
+            font-size: 1.3rem;
+
+            margin-bottom: 2rem;
+
+        }
+
+       
+
+        .cta-btn {
+
+            display: inline-block;
+
+            background-color: var(--secondary);
+
+            color: var(--white);
+
+            padding: 1rem 2.5rem;
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            transition: all 0.3s ease;
+
+            margin: 0 10px 10px;
+
+        }
+
+       
+
+        .cta-btn:hover {
+
+            background-color: #d2661b;
+
+            transform: scale(1.05);
+
+        }
+
+       
+
+        .cta-btn.outline {
+
+            background-color: transparent;
+
+            border: 2px solid var(--white);
+
+        }
+
+       
+
+        .cta-btn.outline:hover {
+
+            background-color: var(--white);
+
+            color: var(--primary);
+
+        }
+
+       
+
+        .stats-banner {
+
+            background-color: var(--secondary);
+
+            color: var(--white);
+
+            padding: 2rem 1rem;
+
+            text-align: center;
+
+        }
+
+       
+
+        .stats-container {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+       
+
+        .stat-item {
+
+            margin: 1rem 2rem;
+
+            min-width: 160px;
+
+        }
+
+       
+
+        .stat-number {
+
+            font-size: 2.5rem;
+
+            font-weight: bold;
+
+            margin-bottom: 0.5rem;
+
+        }
+
+       
+
+        .stat-label {
+
+            font-size: 1rem;
+
+        }
+
+       
+
+        .section {
+
+            padding: 5rem 2rem;
+
+        }
+
+       
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 3rem;
+
+        }
+
+       
+
+        .section-title h2 {
+
+            font-size: 2.2rem;
+
+            color: var(--primary);
+
+            margin-bottom: 1rem;
+
+            position: relative;
+
+            display: inline-block;
+
+        }
+
+       
+
+        .section-title h2::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 50%;
+
+            height: 3px;
+
+            background-color: var(--secondary);
+
+            bottom: -10px;
+
+            left: 25%;
+
+        }
+
+       
+
+        .section-title p {
+
+            font-size: 1.1rem;
+
+            max-width: 800px;
+
+            margin: 0 auto;
+
+        }
+
+       
+
+        .problem-solution {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+       
+
+        .problem, .solution {
+
+            flex: 1;
+
+            min-width: 300px;
+
+            padding: 2rem;
+
+        }
+
+       
+
+        .problem {
+
+            background-color: var(--primary-light);
+
+            border-radius: 8px 0 0 8px;
+
+        }
+
+       
+
+        .solution {
+
+            background-color: var(--secondary-light);
+
+            border-radius: 0 8px 8px 0;
+
+        }
+
+       
+
+        .card-title {
+
+            font-size: 1.5rem;
+
+            color: var(--primary);
+
+            margin-bottom: 1.5rem;
+
+            text-align: center;
+
+        }
+
+       
+
+        .card-icon {
+
+            font-size: 3rem;
+
+            text-align: center;
+
+            margin-bottom: 1.5rem;
+
+        }
+
+       
+
+        .how-it-works {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+       
+
+        .steps-container {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+        }
+
+       
+
+        .step {
+
+            flex: 1;
+
+            min-width: 250px;
+
+            margin: 1rem;
+
+            padding: 2rem;
+
+            background-color: var(--white);
+
+            border-radius: 8px;
+
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+            text-align: center;
+
+            transition: transform 0.3s ease;
+
+        }
+
+       
+
+        .step:hover {
+
+            transform: translateY(-10px);
+
+        }
+
+       
+
+        .step-number {
+
+            display: inline-block;
+
+            width: 40px;
+
+            height: 40px;
+
+            background-color: var(--primary);
+
+            color: var(--white);
+
+            border-radius: 50%;
+
+            line-height: 40px;
+
+            font-weight: bold;
+
+            margin-bottom: 1rem;
+
+        }
+
+       
+
+        .step-icon {
+
+            font-size: 2.5rem;
+
+            color: var(--secondary);
+
+            margin-bottom: 1rem;
+
+        }
+
+       
+
+        .step-title {
+
+            font-size: 1.3rem;
+
+            font-weight: bold;
+
+            color: var(--primary);
+
+            margin-bottom: 1rem;
+
+        }
+
+       
+
+        .spotlight {
+
+            background-color: var(--primary-light);
+
+            padding: 5rem 2rem;
+
+        }
+
+       
+
+        .spotlight-container {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            align-items: center;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+       
+
+        .spotlight-image {
+
+            flex: 1;
+
+            min-width: 300px;
+
+            padding: 2rem;
+
+        }
+
+       
+
+        .spotlight-image img {
+
+            width: 100%;
+
+            border-radius: 8px;
+
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+        }
+
+       
+
+        .spotlight-content {
+
+            flex: 1;
+
+            min-width: 300px;
+
+            padding: 2rem;
+
+        }
+
+       
+
+        .spotlight-title {
+
+            font-size: 1.8rem;
+
+            color: var(--primary);
+
+            margin-bottom: 1rem;
+
+        }
+
+       
+
+        .spotlight-business {
+
+            font-size: 1.2rem;
+
+            color: var(--secondary);
+
+            font-style: italic;
+
+            margin-bottom: 1.5rem;
+
+        }
+
+       
+
+        .spotlight-metrics {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 1.5rem;
+
+        }
+
+       
+
+        .spotlight-metric {
+
+            text-align: center;
+
+            flex: 1;
+
+        }
+
+       
+
+        .metric-value {
+
+            font-size: 1.5rem;
+
+            font-weight: bold;
+
+            color: var(--primary);
+
+        }
+
+       
+
+        .metric-label {
+
+            font-size: 0.9rem;
+
+        }
+
+       
+
+        .quote {
+
+            font-style: italic;
+
+            padding: 1.5rem;
+
+            background-color: var(--white);
+
+            border-radius: 8px;
+
+            position: relative;
+
+            margin-bottom: 1.5rem;
+
+        }
+
+       
+
+        .quote::before {
+
+            content: """;
+
+            font-size: 4rem;
+
+            position: absolute;
+
+            top: -15px;
+
+            left: 10px;
+
+            color: rgba(10, 92, 151, 0.1);
+
+        }
+
+       
+
+        .approach {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+       
+
+        .approach-container {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+        }
+
+       
+
+        .approach-item {
+
+            flex: 1;
+
+            min-width: 300px;
+
+            margin: 1rem;
+
+            padding: 2rem;
+
+            background-color: var(--white);
+
+            border-radius: 8px;
+
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+        }
+
+       
+
+        .approach-icon {
+
+            font-size: 2.5rem;
+
+            color: var(--secondary);
+
+            margin-bottom: 1rem;
+
+            text-align: center;
+
+        }
+
+       
+
+        .approach-title {
+
+            font-size: 1.3rem;
+
+            font-weight: bold;
+
+            color: var(--primary);
+
+            margin-bottom: 1rem;
+
+            text-align: center;
+
+        }
+
+       
+
+        .map-section {
+
+            background-color: var(--primary-light);
+
+            padding: 5rem 2rem;
+
+        }
+
+       
+
+        .map-container {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            align-items: center;
+
+        }
+
+       
+
+        .map {
+
+            flex: 1;
+
+            min-width: 300px;
+
+            padding: 2rem;
+
+            text-align: center;
+
+        }
+
+       
+
+        .map-image {
+
+            width: 100%;
+
+            max-width: 500px;
+
+            margin: 0 auto;
+
+            position: relative;
+
+        }
+
+       
+
+        .map-point {
+
+            position: absolute;
+
+            width: 20px;
+
+            height: 20px;
+
+            background-color: var(--secondary);
+
+            border-radius: 50%;
+
+            cursor: pointer;
+
+        }
+
+       
+
+        .map-point:hover {
+
+            transform: scale(1.2);
+
+        }
+
+       
+
+        .map-point.jinja {
+
+            top: 40%;
+
+            right: 30%;
+
+        }
+
+       
+
+        .map-point.matugga {
+
+            top: 55%;
+
+            left: 45%;
+
+        }
+
+       
+
+        .map-point.busia {
+
+            top: 30%;
+
+            left: 20%;
+
+        }
+
+       
+
+        .location-details {
+
+            flex: 1;
+
+            min-width: 300px;
+
+            padding: 2rem;
+
+        }
+
+       
+
+        .location-tabs {
+
+            display: flex;
+
+            justify-content: center;
+
+            margin-bottom: 2rem;
+
+            border-bottom: 1px solid #ddd;
+
+        }
+
+       
+
+        .location-tab {
+
+            padding: 1rem 2rem;
+
+            cursor: pointer;
+
+            margin: 0 0.5rem;
+
+            border-bottom: 3px solid transparent;
+
+        }
+
+       
+
+        .location-tab.active {
+
+            border-bottom: 3px solid var(--secondary);
+
+            color: var(--primary);
+
+            font-weight: bold;
+
+        }
+
+       
+
+        .location-content {
+
+            display: none;
+
+            animation: fadeIn 0.5s;
+
+        }
+
+       
+
+        .location-content.active {
+
+            display: block;
+
+        }
+
+       
+
+        @keyframes fadeIn {
+
+            from { opacity: 0; }
+
+            to { opacity: 1; }
+
+        }
+
+       
+
+        .location-title {
+
+            font-size: 1.5rem;
+
+            color: var(--primary);
+
+            margin-bottom: 1rem;
+
+        }
+
+       
+
+        .location-stats {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 1.5rem;
+
+        }
+
+       
+
+        .location-stat {
+
+            flex: 1;
+
+            min-width: 100px;
+
+            text-align: center;
+
+            margin: 0.5rem;
+
+        }
+
+       
+
+        .location-stat-value {
+
+            font-size: 1.5rem;
+
+            font-weight: bold;
+
+            color: var(--primary);
+
+        }
+
+       
+
+        .location-stat-label {
+
+            font-size: 0.9rem;
+
+        }
+
+       
+
+        .team-section {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+       
+
+        .team-container {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+        }
+
+       
+
+        .team-member {
+
+            width: 270px;
+
+            margin: 1.5rem;
+
+            background-color: var(--white);
+
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+            transition: transform 0.3s ease;
+
+        }
+
+       
+
+        .team-member:hover {
+
+            transform: translateY(-10px);
+
+        }
+
+       
+
+        .member-image {
+
+            width: 100%;
+
+            height: 250px;
+
+            background-color: #ddd;
+
+            background-size: cover;
+
+            background-position: center;
+
+        }
+
+       
+
+        .member-info {
+
+            padding: 1.5rem;
+
+        }
+
+       
+
+        .member-name {
+
+            font-size: 1.3rem;
+
+            font-weight: bold;
+
+            color: var(--primary);
+
+            margin-bottom: 0.5rem;
+
+        }
+
+       
+
+        .member-title {
+
+            font-size: 1rem;
+
+            color: var(--secondary);
+
+            margin-bottom: 1rem;
+
+        }
+
+       
+
+        .news-section {
+
+            background-color: var(--primary-light);
+
+            padding: 5rem 2rem;
+
+        }
+
+       
+
+        .news-container {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+        }
+
+       
+
+        .news-item {
+
+            width: 350px;
+
+            margin: 1.5rem;
+
+            background-color: var(--white);
+
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+            transition: transform 0.3s ease;
+
+        }
+
+       
+
+        .news-item:hover {
+
+            transform: translateY(-10px);
+
+        }
+
+       
+
+        .news-image {
+
+            width: 100%;
+
+            height: 200px;
+
+            background-color: #ddd;
+
+            background-size: cover;
+
+            background-position: center;
+
+        }
+
+       
+
+        .news-content {
+
+            padding: 1.5rem;
+
+        }
+
+       
+
+        .news-date {
+
+            font-size: 0.9rem;
+
+            color: var(--secondary);
+
+            margin-bottom: 0.5rem;
+
+        }
+
+       
+
+        .news-title {
+
+            font-size: 1.3rem;
+
+            font-weight: bold;
+
+            color: var(--primary);
+
+            margin-bottom: 1rem;
+
+        }
+
+       
+
+        .news-excerpt {
+
+            margin-bottom: 1.5rem;
+
+        }
+
+       
+
+        .cta-section {
+
+            background-color: var(--primary);
+
+            color: var(--white);
+
+            text-align: center;
+
+            padding: 5rem 2rem;
+
+        }
+
+       
+
+        .cta-section h2 {
+
+            font-size: 2.5rem;
+
+            margin-bottom: 1.5rem;
+
+        }
+
+       
+
+        .cta-section p {
+
+            font-size: 1.2rem;
+
+            max-width: 800px;
+
+            margin: 0 auto 2rem;
+
+        }
+
+       
+
+        .cta-buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+        }
+
+       
+
+        footer {
+
+            background-color: var(--dark);
+
+            color: var(--white);
+
+            padding: 3rem 2rem;
+
+        }
+
+       
+
+        .footer-container {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: space-between;
+
+        }
+
+       
+
+        .footer-section {
+
+            flex: 1;
+
+            min-width: 250px;
+
+            margin-bottom: 2rem;
+
+        }
+
+       
+
+        .footer-title {
+
+            font-size: 1.3rem;
+
+            margin-bottom: 1.5rem;
+
+            position: relative;
+
+            padding-bottom: 0.5rem;
+
+        }
+
+       
+
+        .footer-title::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 50px;
+
+            height: 2px;
+
+            background-color: var(--secondary);
+
+            bottom: 0;
+
+            left: 0;
+
+        }
+
+       
+
+        .footer-links a {
+
+            display: block;
+
+            color: var(--white);
+
+            text-decoration: none;
+
+            margin-bottom: 0.5rem;
+
+            transition: all 0.3s ease;
+
+        }
+
+       
+
+        .footer-links a:hover {
+
+            color: var(--secondary);
+
+            padding-left: 5px;
+
+        }
+
+       
+
+        .contact-info p {
+
+            margin-bottom: 0.5rem;
+
+        }
+
+       
+
+        .social-icons {
+
+            margin-top: 1rem;
+
+        }
+
+       
+
+        .social-icons a {
+
+            display: inline-block;
+
+            width: 40px;
+
+            height: 40px;
+
+            background-color: rgba(255, 255, 255, 0.1);
+
+            color: var(--white);
+
+            text-align: center;
+
+            line-height: 40px;
+
+            border-radius: 50%;
+
+            margin-right: 0.5rem;
+
+            transition: all 0.3s ease;
+
+        }
+
+       
+
+        .social-icons a:hover {
+
+            background-color: var(--secondary);
+
+            transform: translateY(-5px);
+
+        }
+
+       
+
+        .copyright {
+
+            text-align: center;
+
+            padding-top: 2rem;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+            margin-top: 2rem;
+
+        }
+
+       
+
+        @media screen and (max-width: 768px) {
+
+            header {
+
+                flex-direction: column;
+
+                padding: 1rem;
+
+            }
+
+           
+
+            nav ul {
+
+                margin-top: 1rem;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+            }
+
+           
+
+            nav ul li {
+
+                margin: 0.5rem;
+
+            }
+
+           
+
+            .hero {
+
+                padding: 8rem 1rem 4rem;
+
+            }
+
+           
+
+            .hero h1 {
+
+                font-size: 2rem;
+
+            }
+
+           
+
+            .hero p {
+
+                font-size: 1.1rem;
+
+            }
+
+           
+
+            .problem, .solution {
+
+                border-radius: 8px;
+
+                margin-bottom: 1rem;
+
+            }
+
+           
+
+            .spotlight-image, .spotlight-content {
+
+                padding: 1rem;
+
+            }
+
+           
+
+            .location-tab {
+
+                padding: 0.5rem 1rem;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+
+            <div class="logo-img">↗</div>
+
+            <span>Prograte Capital Ventures</span>
+
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li><a href="#" class="active">Home</a></li>
+
+                <li><a href="#">About</a></li>
+
+                <li><a href="#">Services</a></li>
+
+                <li><a href="#">Impact</a></li>
+
+                <li><a href="#">Apply</a></li>
+
+                <li><a href="#">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+   
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Empowering Uganda's Women Entrepreneurs Through Innovative Micro-Investments</h1>
+
+            <p>We provide dividend-based micro-investments and comprehensive business support to women entrepreneurs in Uganda's informal sector, achieving consistent monthly returns while driving financial inclusion.</p>
+
+            <div>
+
+                <a href="#" class="cta-btn">Apply for Investment</a>
+
+                <a href="#" class="cta-btn outline">Learn More</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+   
+
+    <section class="stats-banner">
+
+        <div class="stats-container">
+
+            <div class="stat-item">
+
+                <div class="stat-number">400+</div>
+
+                <div class="stat-label">Businesses Supported</div>
+
+            </div>
+
+            <div class="stat-item">
+
+                <div class="stat-number">81%</div>
+
+                <div class="stat-label">Women-Owned Enterprises</div>
+
+            </div>
+
+            <div class="stat-item">
+
+                <div class="stat-number">5-10%</div>
+
+                <div class="stat-label">Monthly Returns</div>
+
+            </div>
+
+            <div class="stat-item">
+
+                <div class="stat-number">$68K</div>
+
+                <div class="stat-label">Capital Deployed</div>
+
+            </div>
+
+            <div class="stat-item">
+
+                <div class="stat-number">74%</div>
+
+                <div class="stat-label">Active Engagement Rate</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+   
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <h2>The Challenge & Our Solution</h2>
+
+            <p>In Uganda, over 80% of women-owned businesses operate in the informal sector, systematically excluded from traditional financing despite their proven business success.</p>
+
+        </div>
+
+       
+
+        <div class="problem-solution">
+
+            <div class="problem">
+
+                <div class="card-icon">🔒</div>
+
+                <div class="card-title">The Challenge</div>
+
+                <p>Women entrepreneurs in Uganda's informal sector face significant barriers to accessing capital:</p>
+
+                <ul style="margin-left: 20px; margin-top: 10px;">
+
+                    <li>Traditional financial institutions require collateral and formal documentation</li>
+
+                    <li>Limited property ownership rights make collateral-based lending impossible</li>
+
+                    <li>Cultural biases restrict access to male-dominated financial networks</li>
+
+                    <li>Lack of formal business registration prevents access to conventional investments</li>
+
+                    <li>Existing microfinance solutions impose unsustainable interest rates and rigid repayment terms</li>
+
+                </ul>
+
+            </div>
+
+           
+
+            <div class="solution">
+
+                <div class="card-icon">💡</div>
+
+                <div class="card-title">Our Solution</div>
+
+                <p>Prograte Capital Ventures bridges this gap through our innovative approach:</p>
+
+                <ul style="margin-left: 20px; margin-top: 10px;">
+
+                    <li>Dividend-based micro-investments ranging from $15 to $500</li>
+
+                    <li>No collateral requirements or formal documentation needed</li>
+
+                    <li>Flexible payment schedules aligned with business cash flows</li>
+
+                    <li>Comprehensive business support services including mentorship and training</li>
+
+                    <li>Evaluation based on cash flow patterns, community reputation, and character</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+   
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <h2>How It Works</h2>
+
+            <p>Our proven four-step process empowers entrepreneurs while delivering consistent returns</p>
+
+        </div>
+
+       
+
+        <div class="how-it-works">
+
+            <div class="steps-container">
+
+                <div class="step">
+
+                    <div class="step-number">1</div>
+
+                    <div class="step-icon">💰</div>
+
+                    <div class="step-title">Investment</div>
+
+                    <p>We provide flexible micro-investments from $15-$500 to women entrepreneurs with demonstrated business success and growth potential.</p>
+
+                </div>
+
+               
+
+                <div class="step">
+
+                    <div class="step-number">2</div>
+
+                    <div class="step-icon">🚀</div>
+
+                    <div class="step-title">Support</div>
+
+                    <p>Our comprehensive business development mentorship, financial literacy training, and networking opportunities set entrepreneurs up for success.</p>
+
+                </div>
+
+               
+
+                <div class="step">
+
+                    <div class="step-number">3</div>
+
+                    <div class="step-icon">📈</div>
+
+                    <div class="step-title">Growth</div>
+
+                    <p>Entrepreneurs leverage our capital and support to expand inventory, improve operations, and create jobs within their communities.</p>
+
+                </div>
+
+               
+
+                <div class="step">
+
+                    <div class="step-number">4</div>
+
+                    <div class="step-icon">🏆</div>
+
+                    <div class="step-title">Returns</div>
+
+                    <p>Monthly dividend payments of 5-10% create sustainable returns while entrepreneurs build toward financial independence.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+   
+
+    <section class="spotlight">
+
+        <div class="section-title">
+
+            <h2>Entrepreneur Spotlight</h2>
+
+            <p>Meet the remarkable entrepreneurs transforming their businesses with Prograte's support</p>
+
+        </div>
+
+       
+
+        <div class="spotlight-container">
+
+            <div class="spotlight-image">
+
+                <img src="/api/placeholder/500/500" alt="Janet Nakato, Market Vendor">
+
+            </div>
+
+           
+
+            <div class="spotlight-content">
+
+                <div class="spotlight-title">Janet Nakato</div>
+
+                <div class="spotlight-business">Fresh Produce Market, Jinja</div>
+
+               
+
+                <p>Janet operated a small produce stand selling just three vegetable varieties and struggling to maintain consistent inventory. After receiving a $200 investment from Prograte, she expanded her inventory, purchased a refrigerator to reduce spoilage, and now operates one of the most successful produce businesses in her market.</p>
+
+               
+
+                <div class="spotlight-metrics">
+
+                    <div class="spotlight-metric">
+
+                        <div class="metric-value">250%</div>
+
+                        <div class="metric-label">Revenue Growth</div>
+
+                    </div>
+
+                    <div class="spotlight-metric">
+
+                        <div class="metric-value">3</div>
+
+                        <div class="metric-label">Jobs Created</div>
+
+                    </div>
+
+                    <div class="spotlight-metric">
+
+                        <div class="metric-value">15</div>
+
+                        <div class="metric-label">Product Varieties</div>
+
+                    </div>
+
+                </div>
+
+               
+
+                <div class="quote">
+
+                    "Before Prograte, I lost so much inventory to spoilage, and banks wouldn't help me because I had no collateral. Now I have a refrigerator, a wider variety of products, and I've hired three people from my community. My children are in better schools, and I'm saving to open a second location."
+
+                </div>
+
+               
+
+                <a href="#" class="btn">Read Janet's Full Story</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+   
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <h2>Our Investment Approach</h2>
+
+            <p>A revolutionary model tailored for Uganda's informal sector</p>
+
+        </div>
+
+       
+
+        <div class="approach">
+
+            <div class="approach-container">
+
+                <div class="approach-item">
+
+                    <div class="approach-icon">💵</div>
+
+                    <div class="approach-title">Dividend-Based Model</div>
+
+                    <p>Unlike traditional loans with rigid repayment schedules, our dividend-based model aligns payments with business cash flows. Entrepreneurs make monthly dividend payments of 5-10% of invested capital, creating sustainable returns while accommodating the natural cycles of their businesses.</p>
+
+                </div>
+                <div class="approach-item">
+
+                    <div class="approach-icon">🤝</div>
+
+                    <div class="approach-title">No Collateral Required</div>
+
+                    <p>We've eliminated the collateral barrier that prevents women entrepreneurs from accessing traditional financing. Instead, we evaluate businesses through cash flow patterns, community reputation, and character assessments, creating opportunities for entrepreneurs who have been systemat
