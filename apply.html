@@ -33,30 +33,31 @@
 
             <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
                 <form id="applicationForm" class="space-y-6">
+                    <input type="hidden" name="form_type" value="application">
                     <!-- Personal Information -->
                     <div class="space-y-4">
                         <h2 class="text-2xl font-semibold text-primary">Personal Information</h2>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
-                                <input type="text" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+                                <input type="text" name="fullName" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
-                                <input type="tel" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+                                <input type="tel" name="phone" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                                <input type="email" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+                                <input type="email" name="email" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">Location/District *</label>
-                                <input type="text" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+                                <input type="text" name="location" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
                             </div>
 
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">National Identifocation Number (NIN) *</label>
-                                <input type="text" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+                                <input type="text" name="nin" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
                             </div>
 
                         </div>
@@ -68,11 +69,11 @@
                         <div class="grid grid-cols-1 gap-4">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">Business Name *</label>
-                                <input type="text" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+                                <input type="text" name="businessName" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">Type of Business *</label>
-                                <select required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+                                <select name="businessType" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
                                     <option value="">Select business type</option>
                                     <option value="retail">Retail</option>
                                     <option value="agriculture">Agriculture</option>
@@ -84,7 +85,7 @@
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">Years in Business *</label>
-                                <select required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+                                <select name="yearsInBusiness" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
                                     <option value="">Select years in business</option>
                                     <option value="<1">Less than 1 year</option>
                                     <option value="1-2">1-2 years</option>
@@ -94,7 +95,7 @@
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">Monthly Revenue (UGX) *</label>
-                                <select required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+                                <select name="monthlyRevenue" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
                                     <option value="">Select monthly revenue range</option>
                                     <option value="<500k">Less than 500,000</option>
                                     <option value="500k-1m">500,000 - 1,000,000</option>
@@ -104,7 +105,7 @@
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">Tell us about your business and how you would use the investment *</label>
-                                <textarea required rows="4" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary"></textarea>
+                                <textarea name="businessDescription" required rows="4" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary"></textarea>
                             </div>
                         </div>
                     </div>
@@ -126,6 +127,16 @@
     <div id="footer-placeholder"></div>
 
     <script>
+        // Configuration
+        const getBaseUrl = () => {
+            // Check if we're in production (e.g. progratecapital.com)
+            if (window.location.hostname === 'progratecapital.com' || window.location.hostname === 'www.progratecapital.com') {
+                return '/api/forms'; // Production API endpoint
+            }
+            // Development environment
+            return 'http://localhost:8000/api/forms';
+        };
+
         // Load header and footer
         fetch('header.html')
             .then(response => response.text())
@@ -145,10 +156,25 @@
         // Form submission handling
         document.getElementById('applicationForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            // Here you would typically send the form data to your backend
-            alert('Thank you for your application! We will review it and contact you soon.');
-            this.reset();
+            const form = this;
+            const formData = new FormData(form);
+
+            fetch(getBaseUrl(), {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                if (data.success) {
+                    form.reset();
+                }
+            })
+            .catch(error => {
+                alert('An error occurred. Please try again later.');
+                console.error('Error:', error);
+            });
         });
     </script>
 </body>
-</html> 
+</html>
