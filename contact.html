@@ -93,22 +93,23 @@
                 <!-- Contact Form -->
                 <div class="bg-white rounded-lg shadow-lg p-6">
                     <h2 class="text-2xl font-semibold text-primary mb-6">Send us a Message</h2>
-                    <form id="contactForm" class="space-y-4">
+                    <form id="contactForm" class="space-y-4" method="POST" action="handle_forms.php">
+                        <input type="hidden" name="form_type" value="contact">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
-                            <input type="text" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+                            <input type="text" name="fullName" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
-                            <input type="email" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+                            <input type="email" name="email" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">Subject *</label>
-                            <input type="text" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+                            <input type="text" name="subject" required class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">Message *</label>
-                            <textarea required rows="4" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary"></textarea>
+                            <textarea name="message" required rows="4" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary"></textarea>
                         </div>
                         <div class="flex items-center space-x-4 pt-4">
                             <button type="submit" class="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-md transition-colors">
@@ -128,6 +129,16 @@
     <div id="footer-placeholder"></div>
 
     <script>
+        // Configuration
+        const getBaseUrl = () => {
+            // Check if we're in production (e.g. progratecapital.com)
+            if (window.location.hostname === 'progratecapital.com' || window.location.hostname === 'www.progratecapital.com') {
+                return '/api/forms'; // Production API endpoint
+            }
+            // Development environment
+            return 'http://localhost:8000/api/forms';
+        };
+
         // Load header and footer
         fetch('header.html')
             .then(response => response.text())
@@ -147,10 +158,25 @@
         // Form submission handling
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            // Here you would typically send the form data to your backend
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
+            const form = this;
+            const formData = new FormData(form);
+
+            fetch(getBaseUrl(), {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                if (data.success) {
+                    form.reset();
+                }
+            })
+            .catch(error => {
+                alert('An error occurred. Please try again later.');
+                console.error('Error:', error);
+            });
         });
     </script>
 </body>
-</html> 
+</html>
