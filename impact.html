@@ -56,15 +56,83 @@
 
         <!-- Hero Section -->
 
-        <section class="relative bg-primary mb-16">
+        <section class="relative mb-16 overflow-hidden">
 
-            <div class="absolute inset-0 bg-black/30"></div>
+            <!-- Background Image -->
 
-            <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center text-white">
+            <div class="absolute inset-0">
 
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Impact</h1>
+                <img src="impact-hero.jpg" alt="" class="w-full h-full object-cover" onerror="this.style.display='none'">
 
-                <p class="text-lg md:text-xl max-w-3xl mx-auto">Transforming lives and empowering women entrepreneurs across Uganda through sustainable investment and support.</p>
+                <!-- Gradient Overlay -->
+
+                <div class="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary-dark/90"></div>
+
+            </div>
+
+            <!-- Pattern Overlay -->
+
+            <div class="absolute inset-0 opacity-10">
+
+                <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+
+                    <pattern id="grid" width="8" height="8" patternUnits="userSpaceOnUse">
+
+                        <path d="M 8 0 L 0 0 0 8" fill="none" stroke="currentColor" stroke-width="0.5"/>
+
+                    </pattern>
+
+                    <rect width="100" height="100" fill="url(#grid)"/>
+
+                </svg>
+
+            </div>
+
+            <!-- Content -->
+
+            <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center text-white">
+
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Our Impact</h1>
+
+                <p class="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">Transforming lives and empowering women entrepreneurs across Uganda through sustainable investment and support.</p>
+                
+                <!-- Quick Stats -->
+
+                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+
+                        <div class="text-3xl font-bold text-secondary">400+</div>
+
+                        <div class="text-sm text-gray-200">Entrepreneurs</div>
+
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+
+                        <div class="text-3xl font-bold text-secondary">3</div>
+
+                        <div class="text-sm text-gray-200">Locations</div>
+
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+
+                        <div class="text-3xl font-bold text-secondary">95%</div>
+
+                        <div class="text-sm text-gray-200">Success Rate</div>
+
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+
+                        <div class="text-3xl font-bold text-secondary">2+</div>
+
+                        <div class="text-sm text-gray-200">Years Impact</div>
+
+                    </div>
+
+                </div>
 
             </div>
 
@@ -368,9 +436,9 @@
 
                 </div>
 
-                                <div class="h-2 bg-gray-200 rounded-full">
+                                <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
 
-                                    <div class="h-2 bg-secondary rounded-full" style="width: 85%"></div>
+                                    <div class="progress-bar h-2 bg-secondary rounded-full transition-all duration-1000 ease-out" data-width="85" style="width: 0%"></div>
 
                 </div>
 
@@ -386,9 +454,9 @@
 
                         </div>
 
-                                <div class="h-2 bg-gray-200 rounded-full">
+                                <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
 
-                                    <div class="h-2 bg-secondary rounded-full" style="width: 73%"></div>
+                                    <div class="progress-bar h-2 bg-secondary rounded-full transition-all duration-1000 ease-out" data-width="73" style="width: 0%"></div>
 
                     </div>
 
@@ -428,13 +496,13 @@
 
                                     <span class="text-gray-600">Revenue Growth</span>
 
-                                    <span class="text-primary font-semibold">20%</span>
+                                    <span class="text-primary font-semibold">80%</span>
 
                         </div>
 
-                                <div class="h-2 bg-gray-200 rounded-full">
+                                <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
 
-                                    <div class="h-2 bg-secondary rounded-full" style="width: 80%"></div>
+                                    <div class="progress-bar h-2 bg-secondary rounded-full transition-all duration-1000 ease-out" data-width="80" style="width: 0%"></div>
 
                     </div>
 
@@ -446,13 +514,13 @@
 
                                     <span class="text-gray-600">Asset Growth</span>
 
-                                    <span class="text-primary font-semibold">45%</span>
+                                    <span class="text-primary font-semibold">90%</span>
 
                         </div>
 
-                                <div class="h-2 bg-gray-200 rounded-full">
+                                <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
 
-                                    <div class="h-2 bg-secondary rounded-full" style="width: 90%"></div>
+                                    <div class="progress-bar h-2 bg-secondary rounded-full transition-all duration-1000 ease-out" data-width="90" style="width: 0%"></div>
 
                     </div>
 
@@ -492,13 +560,13 @@
 
                                     <span class="text-gray-600">Local Economic Multiplier</span>
 
-                                    <span class="text-primary font-semibold">2.4x</span>
+                                    <span class="text-primary font-semibold">70%</span>
 
                     </div>
 
-                                <div class="h-2 bg-gray-200 rounded-full">
+                                <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
 
-                                    <div class="h-2 bg-secondary rounded-full" style="width: 70%"></div>
+                                    <div class="progress-bar h-2 bg-secondary rounded-full transition-all duration-1000 ease-out" data-width="70" style="width: 0%"></div>
 
                     </div>
 
@@ -510,13 +578,13 @@
 
                                     <span class="text-gray-600">Community Reinvestment</span>
 
-                                    <span class="text-primary font-semibold">42%</span>
+                                    <span class="text-primary font-semibold">84%</span>
 
                     </div>
 
-                                <div class="h-2 bg-gray-200 rounded-full">
+                                <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
 
-                                    <div class="h-2 bg-secondary rounded-full" style="width: 84%"></div>
+                                    <div class="progress-bar h-2 bg-secondary rounded-full transition-all duration-1000 ease-out" data-width="84" style="width: 0%"></div>
 
                     </div>
 
@@ -739,6 +807,32 @@
 
             decimal: '.',
 
+        });
+
+
+        // Initialize Intersection Observer for progress bars
+        const progressBars = document.querySelectorAll('.progress-bar');
+        
+        const progressObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bar = entry.target;
+                    const width = bar.getAttribute('data-width');
+                    // Add a small delay for better visual effect
+                    setTimeout(() => {
+                        bar.style.width = width + '%';
+                    }, 200);
+                    // Unobserve after animation
+                    progressObserver.unobserve(bar);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // Observe all progress bars
+        progressBars.forEach(bar => {
+            progressObserver.observe(bar);
         });
 
     </script>
