@@ -27,10 +27,64 @@
     <!-- Main content -->
     <main class="pt-24">
         <!-- Hero Section -->
-        <section class="bg-primary-light py-20 px-8">
-            <div class="max-w-6xl mx-auto">
-                <h1 class="text-4xl font-bold text-primary mb-6">Our Services</h1>
-                <p class="text-xl text-gray-700 max-w-3xl">We provide comprehensive financial and business support services tailored to empower women entrepreneurs in Uganda's informal sector.</p>
+        <section class="relative overflow-hidden">
+            <!-- Background Image -->
+            <div class="absolute inset-0">
+                <img src="back2.jpg" alt="" class="w-full h-full object-cover" onerror="this.style.display='none'">
+                <!-- Gradient Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-br from-primary/95 to-primary-dark/95"></div>
+            </div>
+
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-10">
+                <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4,4"/>
+                </svg>
+            </div>
+            
+            <!-- Content -->
+            <div class="relative max-w-6xl mx-auto px-8 py-16">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <!-- Text Content -->
+                    <div class="text-white">
+                        <h1 class="text-4xl font-bold mb-4 leading-tight">Our key Services</h1>
+                        <p class="text-lg text-gray-100 mb-6 leading-relaxed">We provide comprehensive financial solutions and business support services tailored to transform informal businesses into thriving enterprises.</p>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="apply.html" class="inline-flex items-center px-6 py-2.5 bg-secondary hover:bg-secondary/90 text-white font-semibold rounded-full transition-all transform hover:scale-105">
+                                <span>Apply Now</span>
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                            <a href="#services" class="inline-flex items-center px-6 py-2.5 border-2 border-white/20 hover:border-white/40 text-white font-semibold rounded-full transition-all">
+                                Our Services
+                            </a>
+                        </div>
+                        
+                        <!-- Stats -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 mt-8">
+                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                                <div class="text-2xl font-bold text-secondary">400+</div>
+                                <div class="text-gray-300 text-xs">Businesses Supported</div>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                                <div class="text-2xl font-bold text-secondary">$68K</div>
+                                <div class="text-gray-300 text-xs">Capital Deployed</div>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                                <div class="text-2xl font-bold text-secondary">26%</div>
+                                <div class="text-gray-300 text-xs">Growth Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Image/Illustration -->
+                    <div class="relative hidden md:block">
+                        <div class="aspect-square rounded-full bg-white/10 absolute -right-16 -top-16 w-48 blur-3xl"></div>
+                        <div class="aspect-square rounded-full bg-secondary/20 absolute -right-8 -bottom-8 w-32 blur-3xl"></div>
+                        <img src="assets/images/hero-services.png" alt="Women Entrepreneurs" class="relative z-10 w-full h-auto rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-500 bg-white/5 backdrop-blur-sm p-2" onerror="this.style.display='none'">
+                    </div>
+                </div>
             </div>
         </section>
 
